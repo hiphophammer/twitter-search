@@ -1,12 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import KRFlag from './components/flags/kor.svg'
+
+import VariantsSample from './components/confirmButton';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
+      <VariantsSample />
     </div>
   );
 }
