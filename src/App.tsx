@@ -11,8 +11,4 @@ function App() {
   );
 }
 
-const navBar = () => {
-
-}
-
 export default App;
