@@ -1,8 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Alert from 'react-bootstrap/Alert';
 
 const BottomMenu = ( ) => {
   return (
@@ -13,10 +11,23 @@ const BottomMenu = ( ) => {
           <Nav className="me-auto">
           </Nav>
           <Nav>
-            <Nav.Link href="https://github.com/hiphophammer" target="_blank" rel="noopener noreferrer">GitHub</Nav.Link>
-            <Nav.Link href="#deets">More deets</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              Dank memes
+            <Nav.Link 
+              href="https://github.com/hiphophammer" 
+              target="_blank" 
+              rel="noopener noreferrer">
+                GitHub
+            </Nav.Link>
+            <Nav.Link 
+              href="https://www.linkedin.com/in/jw-oh/" 
+              target="_blank" 
+              rel="noopener noreferrer">
+                LinkedIn
+            </Nav.Link>
+            <Nav.Link 
+              href="https://hiphophammer.github.io/jw.github.io/" 
+              target="_blank" 
+              rel="noopener noreferrer">
+                Website
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
