@@ -1,27 +1,11 @@
 import Button from 'react-bootstrap/Button';
 
-const VariantsSample = ( ) => {
-    return (
-        <div>
-      <style type="text/css">
-        {`
-      .btn-flat {
-        background-color: purple;
-        color: white;
-      }
-  
-      .btn-lg {
-        padding: 1rem 1.5rem;
-        font-size: 1.5rem;
-      }
-      `}
-        </style>
-  
-        <Button variant="flat" size="lg">
-          flat button
-        </Button>
-      </div>
-    )
+const ConfirmButton = ( ) => {
+  return (
+    <>
+      <Button variant="dark" style={ {  } } active={ true }>확인</Button>{' '}
+    </>
+  )
 };
 
-export default VariantsSample;
+export default ConfirmButton;
