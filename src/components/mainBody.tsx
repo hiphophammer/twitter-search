@@ -42,7 +42,6 @@ const MainBody = ( ) => {
           <div style={{ display: ( advancedSearch ? 'block' : 'none' )}}>
             <AdvancedSearchForm />
           </div>
-          <ConfirmButton />
         </Card.Body>
       </Card>
     </Container>

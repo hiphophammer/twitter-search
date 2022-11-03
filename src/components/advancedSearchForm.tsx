@@ -1,7 +1,7 @@
 import TextBox from "./textBox";
 import Form from 'react-bootstrap/Form';
 import { useRef, useState } from 'react'
-import Card from 'react-bootstrap/Card';
+import ConfirmButton from './confirmButton'
 
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
@@ -98,9 +98,7 @@ const AdvancedSearchForm = ( ) => {
         <div style={{marginTop: '20px'}}></div>
         <InputGroup className="mb-3">
           <DropdownButton
-              className='w-100'
               title="모든 언어"
-              key={'모든 언어'}
               id='dropdown'
             >
             <Dropdown.Item href="#">모든 언어</Dropdown.Item>
@@ -281,22 +279,51 @@ const AdvancedSearchForm = ( ) => {
       <div style={{display:(section5?'block':'none')}}>
         <div style={{marginTop: '20px'}}></div>
         <h6>시작</h6>
-        <div style={{marginTop: '20px'}}></div>
-        <h6>끝</h6>
-        <InputGroup className="mb-3">
+        <div className='dateEntryDiv'>
           <DropdownButton
-              className='w-100'
-              variant="outline-dark"
+              className='date_button_month'
               title="월"
-              key={'모든 언어'}
+              id='dropdown_month'
+            >
+          </DropdownButton>
+          <DropdownButton
+              className='date_button_date'
+              title="일"
               id='dropdown_date'
             >
-            <Dropdown.Item>1월</Dropdown.Item>
-            <Dropdown.Item>2월</Dropdown.Item>
           </DropdownButton>
-        </InputGroup>
+          <DropdownButton
+              className='date_button_year'
+              title="년"
+              id='dropdown_year'
+            >
+          </DropdownButton>
+        </div>
+        <div style={{marginTop: '20px'}}></div>
+        <h6>끝</h6>
+        <div className='dateEntryDiv'>
+          <DropdownButton
+              className='date_button_month'
+              title="월"
+              id='dropdown_month'
+            >
+          </DropdownButton>
+          <DropdownButton
+              className='date_button_date'
+              title="일"
+              id='dropdown_date'
+            >
+          </DropdownButton>
+          <DropdownButton
+              className='date_button_year'
+              title="년"
+              id='dropdown_year'
+            >
+          </DropdownButton>
+        </div>
       </div>
       <hr />
+      <ConfirmButton />
     </>
   );
 }

@@ -13,6 +13,16 @@ body {
   align-items: center;
 }
 
+.confirmButton {
+  width: 100%;
+  height: 40px;
+  border-color:transparent;
+}
+.confirmButton:hover {
+  background-color: gray;
+  border-color:transparent;
+}
+
 h5 {
   font-weight: bold;
 }
@@ -67,6 +77,30 @@ h6.bold {
   background-color: transparent;
   color: black;
   text-align: left;
+}
+
+.dateEntryDiv {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#dropdown_date, #dropdown_month, #dropdown_year {
+  height: 60px;
+  border-color: lightgray;
+  background-color: transparent;
+  color: black;
+  text-align: left;
+  width: 100%;
+}
+.date_button_month {
+  flex: 0.4;
+}
+.date_button_date {
+  flex: 0.25;
+}
+.date_button_year {
+  flex: 0.30;
 }
 
 .flexTitle {
