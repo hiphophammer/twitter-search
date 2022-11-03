@@ -3,19 +3,30 @@ import { ToggleSwitchProp } from './interfaces';
 
 const ToggleSwitch = ( props:ToggleSwitchProp ) => { 
   const switchClick = ( ) => {
-    props.setSwitchStatus( !props.switchStatus );
+    const nextStatus = !props.switchStatus;
+    props.setSwitchStatus( nextStatus );
+    if( props.setHeight ) {
+      handleHeightOffset( nextStatus );
+    }
+  };
+
+  const handleHeightOffset = ( nextStatus:boolean ) => {
+    if ( nextStatus ) {
+      props.setHeight?.setCardHeight( props.setHeight.cardHeight + props.setHeight.heightOffset );
+    }
+    else {
+      props.setHeight?.setCardHeight( props.setHeight.cardHeight - props.setHeight.heightOffset );
+    }
   };
   
   return (
     <Form>
       <Form.Check 
         type="switch"
-        id="custom-switch"
+        id='customSwitch'
         label={ props.label }
-        style={ {  } }
+        onChange={ switchClick }
         checked={ props.switchStatus }
-        onClick={ switchClick }
-        
       />
     </Form>
   );
