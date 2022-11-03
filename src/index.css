@@ -2,6 +2,11 @@ body {
   background-color: gray;
 }
 
+.mainCard {
+  display:flex;
+  height:100%;
+}
+
 #root > div > div > div > div > form > div {
   display: flex;
   height: 40px;

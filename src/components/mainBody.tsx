@@ -10,7 +10,6 @@ import { useState, useRef } from 'react';
 
 const MainBody = ( ) => {
   const [ advancedSearch, setAdvancedSearch ] = useState<boolean>( false );
-  const [ cardHeight, setCardHeight ] = useState<number>( 170 );
   const basicSearchRef = useRef<HTMLInputElement>( null );
 
   return (
@@ -21,9 +20,11 @@ const MainBody = ( ) => {
         justifyContent: 'center',
         alignItems: 'center'
       }}>
-      <Card style={{ 
-          width: '36rem',
-          height: `${cardHeight}px`
+      <Card
+          className='mainCard'
+          style={{ 
+            display: 'flex',
+            width: '36rem',
         }}>
         <Card.Body>
           <TextBox
@@ -35,11 +36,6 @@ const MainBody = ( ) => {
             label={ '고급 검색' }
             switchStatus={ advancedSearch }
             setSwitchStatus={ setAdvancedSearch }
-            setHeight={{
-              cardHeight: cardHeight,
-              setCardHeight: setCardHeight, 
-              heightOffset: 2000
-            }}
           />
           {/* Advanced Search */}
           <div style={{ display: ( advancedSearch ? 'block' : 'none' )}}>

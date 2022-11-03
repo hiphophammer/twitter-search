@@ -5,18 +5,6 @@ const ToggleSwitch = ( props:ToggleSwitchProp ) => {
   const switchClick = ( ) => {
     const nextStatus = !props.switchStatus;
     props.setSwitchStatus( nextStatus );
-    if( props.setHeight ) {
-      handleHeightOffset( nextStatus );
-    }
-  };
-
-  const handleHeightOffset = ( nextStatus:boolean ) => {
-    if ( nextStatus ) {
-      props.setHeight?.setCardHeight( props.setHeight.cardHeight + props.setHeight.heightOffset );
-    }
-    else {
-      props.setHeight?.setCardHeight( props.setHeight.cardHeight - props.setHeight.heightOffset );
-    }
   };
   
   return (
