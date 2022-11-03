@@ -31,6 +31,26 @@ h6.bold {
   display:flex;
 }
 
+.filterDiv {
+  flex-direction:column;
+}
+#default-radio{
+  border-radius: 40px;
+  scale:110%;
+}
+
+.hrCompact {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.filterDivRow {
+  display:flex;
+}
+.filterDivRow>h6{
+  width: 33rem;
+}
+
 .bodyCard {
   background-color: gray;
 }

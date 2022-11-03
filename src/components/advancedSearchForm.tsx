@@ -21,7 +21,10 @@ const AdvancedSearchForm = ( ) => {
   const accRef3 = useRef<HTMLInputElement>( null ); // 다음 계정 멘션
 
   const [ commentSwitch, setCommentSwitch ] = useState<boolean>( true );
+  const [ commentOption, setCommentOption ] = useState<boolean>( true );
+
   const [ linkSwitch, setLinkSwitch ] = useState<boolean>( true );
+  const [ linkOption, setLinkOption ] = useState<boolean>( true );
 
   const participationRef1 = useRef<HTMLInputElement>( null ); // 최소 답글 수
   const participationRef2 = useRef<HTMLInputElement>( null ); // 최소 마음에 들어요 수
@@ -131,6 +134,7 @@ const AdvancedSearchForm = ( ) => {
       <hr />
 
       <h5>필터</h5>
+      <div style={{marginTop: '20px'}}></div>
       <div className='filterFlex'>
         <h6 className='bold'>답글</h6>
         <ToggleSwitch
@@ -139,13 +143,76 @@ const AdvancedSearchForm = ( ) => {
           setSwitchStatus={ setCommentSwitch }
         />
       </div>
-      
-      <Card 
-        style={{ width: '30rem' }}
-        className='bodyCard'>
-        ㅇㅅㅇ
-      </Card>
-      <h6 className='bold'>링크</h6>
+      <hr className="hrCompact" />
+      <div
+        className='filterDiv' 
+        style={{
+          display: ( commentSwitch ? 'flex' : 'none' )
+      }}>
+        <div className='filterDivRow'>
+          <h6>
+            답글 및 원본 트윗 포함
+          </h6>
+          <Form.Check 
+              type='checkbox'
+              id='default-radio'
+              checked={ commentOption }
+              onClick={()=>{ setCommentOption( true )}}
+          />
+        </div>
+        <div className='filterDivRow'>
+          <h6>
+            답글만 보기
+          </h6>
+          <Form.Check 
+              type='checkbox'
+              id='default-radio'
+              checked={ !commentOption }
+              onClick={()=>{ setCommentOption( false )}}
+          />
+        </div>
+      </div>
+
+      <div style={{marginTop: '20px'}}></div>
+      <div className='filterFlex'>
+        <h6 className='bold'>링크</h6>
+        <ToggleSwitch
+          id='filterSwitch'
+          switchStatus={ linkSwitch }
+          setSwitchStatus={ setLinkSwitch }
+        />
+      </div>
+      <hr className="hrCompact" />
+      <div
+        className='filterDiv' 
+        style={{
+          display: ( linkSwitch ? 'flex' : 'none' )
+      }}>
+        <div className='filterDivRow'>
+          <h6>
+            답글 및 원본 트윗 포함
+          </h6>
+          <Form.Check 
+              type='checkbox'
+              id='default-radio'
+              checked={ linkOption }
+              onClick={()=>{ setLinkOption( true )}}
+          />
+        </div>
+        <div className='filterDivRow'>
+          <h6>
+            답글만 보기
+          </h6>
+          <Form.Check 
+              type='checkbox'
+              id='default-radio'
+              checked={ !linkOption }
+              onClick={()=>{ setLinkOption( false )}}
+          />
+        </div>
+      </div>
+
+
       <hr />
 
       <h5>참여</h5>
