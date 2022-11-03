@@ -15,7 +15,8 @@ const MainBody = ( ) => {
 
   return (
     <Container style={{
-        marginTop: '20px',
+        marginTop: '40px',
+        marginBottom: '100px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center'
@@ -37,7 +38,7 @@ const MainBody = ( ) => {
             setHeight={{
               cardHeight: cardHeight,
               setCardHeight: setCardHeight, 
-              heightOffset: 1500
+              heightOffset: 2000
             }}
           />
           {/* Advanced Search */}
