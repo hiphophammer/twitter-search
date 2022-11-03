@@ -10,7 +10,7 @@ interface ToggleSwitchProp {
 }
 
 interface TextBoxProp {
-  controlID: string,
+  controlID?: string,
   floatingLabel: string,
   textBoxRef: React.RefObject<HTMLInputElement>,
 }
