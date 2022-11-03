@@ -1,6 +1,7 @@
 import Form from 'react-bootstrap/Form';
+import AdvancedSearchProp from './interfaces';
 
-const AdvancedSearchSwitch = ( ) => { 
+const AdvancedSearchSwitch = ( props:AdvancedSearchProp ) => { 
   return (
     <Form>
       <Form.Check 
