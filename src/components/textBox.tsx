@@ -6,7 +6,7 @@ import { TextBoxProp } from './interfaces';
 const TextBox = ( props:TextBoxProp ) => {
   return (
     <>
-      <FloatingLabel controlId={ props.controlID } label={ props.floatingLabel }>
+      <FloatingLabel controlId={( props.controlID ? props.controlID : '' )} label={ props.floatingLabel }>
         <Form.Control placeholder={ props.floatingLabel } ref={ props.textBoxRef } />
       </FloatingLabel>
     </>
