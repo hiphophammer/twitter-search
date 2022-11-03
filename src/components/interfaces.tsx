@@ -14,6 +14,7 @@ interface AdvancedSearchProp {
 interface TextBoxProp {
   controlID?: string,
   disabled?: boolean,
+  type?: string,
   floatingLabel: string,
   textBoxRef: React.RefObject<HTMLInputElement>,
 }

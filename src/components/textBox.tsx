@@ -7,7 +7,7 @@ const TextBox = ( props:TextBoxProp ) => {
   return (
     <>
       <FloatingLabel controlId={( props.controlID ? props.controlID : '' )} label={ props.floatingLabel }>
-        <Form.Control placeholder={ props.floatingLabel } ref={ props.textBoxRef } disabled={ props.disabled } />
+        <Form.Control type={( props.type ? props.type : 'text' )}  placeholder={ props.floatingLabel } ref={ props.textBoxRef } disabled={ props.disabled } />
       </FloatingLabel>
     </>
   );

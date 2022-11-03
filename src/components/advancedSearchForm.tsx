@@ -19,12 +19,12 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
     // 다음 문구 그대로
     if ( wordRef2?.current?.value !== '' ) {
       if ( result !== '' ) result += ' ';
-      result += `\"${ wordRef2?.current?.value }\"`;
+      result += `"${ wordRef2?.current?.value }"`;
     }
     // OR
     if ( wordRef3?.current?.value !== '' ) {
       if ( result !== '' ) result += ' ';
-      result += `\(${ wordRef3?.current?.value.replaceAll( ' ', ' OR ' ) }\)`;
+      result += `(${ wordRef3?.current?.value.replaceAll( ' ', ' OR ' ) })`;
     }
     // 다음 단어 제외
     if ( wordRef4?.current?.value !== '' ) {
@@ -47,7 +47,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
           temp += `#${ word }`;
         }
       }
-      result += `\(${ temp.replaceAll(' ', ' OR ') }\)`;
+      result += `(${ temp.replaceAll(' ', ' OR ') })`;
     }
 
     // 다음 계정에서 작성
@@ -61,7 +61,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
           temp += `from:${ word }`;
         }
       }
-      result += `\(${ temp.replaceAll(' ', ' OR ') }\)`;
+      result += `(${ temp.replaceAll(' ', ' OR ') })`;
     }
 
     // 다음 계정으로
@@ -75,7 +75,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
           temp += `to:${ word }`;
         }
       }
-      result += `\(${ temp.replaceAll(' ', ' OR ') }\)`;
+      result += `(${ temp.replaceAll(' ', ' OR ') })`;
     }
 
     // 다음 계정 멘션
@@ -89,7 +89,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
           temp += `@${ word }`;
         }
       }
-      result += `\(${ temp.replaceAll(' ', ' OR ') }\)`;
+      result += `(${ temp.replaceAll(' ', ' OR ') })`;
     }
 
     if ( !linkSwitch ) {
@@ -110,7 +110,20 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
       result += 'filter:replies';
     }
     
-    
+    if ( participationRef1?.current?.value !== '' ) {
+      if ( result !== '' ) result += ' ';
+      result += `min_replies:${ participationRef1?.current?.value }`;
+    }
+
+    if ( participationRef2?.current?.value !== '' ) {
+      if ( result !== '' ) result += ' ';
+      result += `min_faves:${ participationRef2?.current?.value }`;
+    }
+
+    if ( participationRef3?.current?.value !== '' ) {
+      if ( result !== '' ) result += ' ';
+      result += `min_retweets:${ participationRef3?.current?.value }`;
+    }
 
     alert( result );
   };
@@ -351,6 +364,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
         <TextBox 
           floatingLabel="최소 답글 수"
           textBoxRef={ participationRef1 }
+          type='number'
         />
         <Form.Text muted style={{marginLeft: '10px'}}>
           예: 280 · 답글이 최소 280개 이상인 트윗
@@ -359,6 +373,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
         <TextBox 
           floatingLabel="최소 마음에 들어요 수"
           textBoxRef={ participationRef2 }
+          type='number'
         />
         <Form.Text muted style={{marginLeft: '10px'}}>
           예: 280 · 마음에 들어요 수가 최소 280회 이상인 트윗
@@ -367,6 +382,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
         <TextBox 
           floatingLabel="최소 리트윗 수"
           textBoxRef={ participationRef3 }
+          type='number'
         />
         <Form.Text muted style={{marginLeft: '10px'}}>
           예: 280 · 리트윗이 최소 280회 이상인 트윗
