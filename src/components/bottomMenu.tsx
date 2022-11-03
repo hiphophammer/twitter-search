@@ -9,6 +9,16 @@ const BottomMenu = ( ) => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
+            <Nav.Item>
+              <p style={{
+                color:'white',
+                position: 'relative',
+                top: '50%',
+                transform: 'translateY(-50%)' 
+              }}>
+                ⓒ 2022 by Hiphophammer
+              </p>
+            </Nav.Item>
           </Nav>
           <Nav>
             <Nav.Link 
