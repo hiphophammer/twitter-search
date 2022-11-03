@@ -10,7 +10,7 @@ import { useState, useRef } from 'react';
 
 const MainBody = ( ) => {
   const [ advancedSearch, setAdvancedSearch ] = useState<boolean>( false );
-  const [ cardHeight, setCardHeight ] = useState<number>( 150 );
+  const [ cardHeight, setCardHeight ] = useState<number>( 170 );
   const basicSearchRef = useRef<HTMLInputElement>( null );
 
   return (

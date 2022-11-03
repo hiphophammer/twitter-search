@@ -2,16 +2,26 @@ body {
   background-color: gray;
 }
 
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#root > div > div > div > div > form > div {
+  display: flex;
+  height: 40px;
+  align-items: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
+#root > div > div > div > div {
+  display:flex;
+  flex-direction: column;
+}
+
+#customSwitch {
+  scale: 110%;
+  margin-right: 5px;
+}
+
+#dropdown {
+  width: 100%;
+  height: 60px;
+  border-color: lightgray;
+  color: black;
+  text-align: left;
+}

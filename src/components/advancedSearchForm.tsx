@@ -69,6 +69,7 @@ const AdvancedSearchForm = ( ) => {
       <div style={{marginTop: '20px'}}></div>
       <InputGroup className="mb-3">
         <DropdownButton
+            className='w-100'
             variant="outline-dark"
             menuVariant="dark"
             title="모든 언어"
