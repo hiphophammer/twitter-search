@@ -9,6 +9,7 @@ const AdvancedSearchSwitch = ( props:AdvancedSearchProp ) => {
         id="custom-switch"
         label="고급 검색"
         style={{ }}
+        checked={true}
       />
     </Form>
   );
