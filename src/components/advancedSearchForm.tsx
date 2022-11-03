@@ -15,10 +15,13 @@ const AdvancedSearchForm = ( ) => {
   const wordRef5 = useRef<HTMLInputElement>( null ); // 다음 해시태그
   const wordRef6 = useRef<HTMLInputElement>( null ); // 언어
 
-  const accRef1 = useRef<HTMLInputElement>( null ); 
-  const accRef2 = useRef<HTMLInputElement>( null ); 
-  const accRef3 = useRef<HTMLInputElement>( null ); 
+  const accRef1 = useRef<HTMLInputElement>( null ); // 다음 계정에서 작성
+  const accRef2 = useRef<HTMLInputElement>( null ); // 다음 계정으로 보냄
+  const accRef3 = useRef<HTMLInputElement>( null ); // 다음 계정 멘션
 
+  const participationRef1 = useRef<HTMLInputElement>( null ); // 최소 답글 수
+  const participationRef2 = useRef<HTMLInputElement>( null ); // 최소 마음에 들어요 수
+  const participationRef3 = useRef<HTMLInputElement>( null ); // 최소 리트윗 수
 
 
   const [ word, setWord ] = useState<boolean>( false );
@@ -120,6 +123,30 @@ const AdvancedSearchForm = ( ) => {
       <h5>필터</h5>
       <hr />
       <h5>참여</h5>
+      <TextBox 
+        floatingLabel="최소 답글 수"
+        textBoxRef={ participationRef1 }
+      />
+      <Form.Text muted style={{marginLeft: '10px'}}>
+        예: 280 · 답글이 최소 280개 이상인 트윗
+      </Form.Text>
+      <div style={{marginTop: '20px'}}></div>
+      <TextBox 
+        floatingLabel="최소 마음에 들어요 수"
+        textBoxRef={ participationRef2 }
+      />
+      <Form.Text muted style={{marginLeft: '10px'}}>
+        예: 280 · 마음에 들어요 수가 최소 280회 이상인 트윗
+      </Form.Text>
+      <div style={{marginTop: '20px'}}></div>
+      <TextBox 
+        floatingLabel="최소 리트윗 수"
+        textBoxRef={ participationRef3 }
+      />
+      <Form.Text muted style={{marginLeft: '10px'}}>
+        예: 280 · 리트윗이 최소 280회 이상인 트윗
+      </Form.Text>
+      <div style={{marginTop: '20px'}}></div>
       <hr />
       <h5>날짜</h5>
     </>
