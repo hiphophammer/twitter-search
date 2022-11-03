@@ -1,7 +1,8 @@
-import './App.css';
 import TopMenu from './components/topMenu';
 import MainBody from './components/mainBody';
 import BottomMenu from './components/bottomMenu';
+
+import styles from './App.module.css';
 
 function App() {
   return (
