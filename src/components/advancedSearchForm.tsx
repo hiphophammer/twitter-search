@@ -15,6 +15,12 @@ const AdvancedSearchForm = ( ) => {
   const wordRef5 = useRef<HTMLInputElement>( null ); // 다음 해시태그
   const wordRef6 = useRef<HTMLInputElement>( null ); // 언어
 
+  const accRef1 = useRef<HTMLInputElement>( null ); 
+  const accRef2 = useRef<HTMLInputElement>( null ); 
+  const accRef3 = useRef<HTMLInputElement>( null ); 
+
+
+
   const [ word, setWord ] = useState<boolean>( false );
   
   return (
@@ -82,7 +88,34 @@ const AdvancedSearchForm = ( ) => {
         </DropdownButton>
       </InputGroup>
       <hr />
+
       <h5>계정</h5>
+      <TextBox 
+        floatingLabel="다음 계정에서 작성"
+        textBoxRef={ accRef1 }
+      />
+      <Form.Text muted style={{marginLeft: '10px'}}>
+        예: @Twitter · @Twitter에서 보냄
+      </Form.Text>
+      <div style={{marginTop: '20px'}}></div>
+      <hr />
+      <TextBox 
+        floatingLabel="다음 계정으로 보냄"
+        textBoxRef={ accRef2 }
+      />
+      <Form.Text muted style={{marginLeft: '10px'}}>
+        예: @Twitter · @Twitter에 답글로 보냄
+      </Form.Text>
+      <div style={{marginTop: '20px'}}></div>
+      <hr />
+      <TextBox 
+        floatingLabel="다음 계정 멘션"
+        textBoxRef={ accRef3 }
+      />
+      <Form.Text muted style={{marginLeft: '10px'}}>
+        예: @SFBART @Caltrain · @SFBART 님을 멘션하거나 @Caltrain 님을 멘션함
+      </Form.Text>
+      <div style={{marginTop: '20px'}}></div>
       <hr />
       <h5>필터</h5>
       <hr />
