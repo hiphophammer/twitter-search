@@ -2,6 +2,8 @@ import Container from 'react-bootstrap/Container';
 import ConfirmButton from './confirmButton'
 import AdvancedSearchSwitch from './advancedSearchSwitch';
 import Card from 'react-bootstrap/Card';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import Form from 'react-bootstrap/Form';
 
 import { useState } from 'react';
 
@@ -21,8 +23,12 @@ const MainBody = ( ) => {
           height: '500px'
         }}>
         <Card.Body>
+          <FloatingLabel controlId="floatingPassword" label="트위터 검색">
+            <Form.Control placeholder='트위터 검색'/>
+          </FloatingLabel>
           <AdvancedSearchSwitch setAdvancedSearch={setAdvancedSearch}/>
           <ConfirmButton />
+
         </Card.Body>
       </Card>
     </Container>
