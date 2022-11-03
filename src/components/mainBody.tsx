@@ -8,7 +8,8 @@ import { useState, useRef } from 'react';
 
 
 const MainBody = ( ) => {
-  const [ advancedSearch, setAdvancedSearch ] = useState<boolean | undefined>( true );
+  const [ advancedSearch, setAdvancedSearch ] = useState<boolean>( false );
+  const [ cardHeight, setCardHeight ] = useState<number>( 150 );
   const basicSearchRef = useRef<HTMLInputElement>( null );
 
   return (
@@ -20,7 +21,7 @@ const MainBody = ( ) => {
       }}>
       <Card style={{ 
           width: '30rem',
-          height: '500px'
+          height: `${cardHeight}px`
         }}>
         <Card.Body>
           <TextBox
@@ -32,7 +33,16 @@ const MainBody = ( ) => {
             label={ '고급 검색' }
             switchStatus={ advancedSearch }
             setSwitchStatus={ setAdvancedSearch }
+            setHeight={{
+              cardHeight: cardHeight,
+              setCardHeight: setCardHeight, 
+              heightOffset: 150
+            }}
           />
+          {/* Advanced Search */}
+          <div style={{ display: ( advancedSearch ? 'block' : 'none' )}}>
+            ㅇㅅㅇ
+          </div>
           <ConfirmButton />
         </Card.Body>
       </Card>
