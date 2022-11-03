@@ -11,8 +11,10 @@ const MainBody = ( ) => {
 
   return (
     <Container style={{
+        marginTop: '20px',
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        alignItems: 'center'
       }}>
       <Card style={{ 
           width: '30rem',
