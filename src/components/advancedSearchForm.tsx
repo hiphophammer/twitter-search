@@ -12,9 +12,106 @@ import ToggleSwitch from "./toggleSwitch";
 const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
   // basic search is taken care in mainBody; just focus on adv. search logic here
   const buttonClick = ( ) => {
-    let result = '';
+    let result:string = '';
+    // 일반
     if ( wordRef1.current )
       result += wordRef1.current.value;
+    // 다음 문구 그대로
+    if ( wordRef2?.current?.value !== '' ) {
+      if ( result !== '' ) result += ' ';
+      result += `\"${ wordRef2?.current?.value }\"`;
+    }
+    // OR
+    if ( wordRef3?.current?.value !== '' ) {
+      if ( result !== '' ) result += ' ';
+      result += `\(${ wordRef3?.current?.value.replaceAll( ' ', ' OR ' ) }\)`;
+    }
+    // 다음 단어 제외
+    if ( wordRef4?.current?.value !== '' ) {
+      const words = wordRef4?.current?.value.split(" ");
+      if ( words !== undefined ) {
+        for (const word of words) {
+          if ( result !== '' ) result += ' ';
+          result += `-${ word }`;
+        }
+      }
+    }
+    // 다음 해시태그
+    if ( wordRef5?.current?.value !== '' ) {
+      if ( result !== '' ) result += ' ';
+      let temp:string = '';
+      const words = wordRef5?.current?.value.split(" ");
+      if ( words !== undefined ) {
+        for (const word of words) {
+          if ( temp !== '' ) temp += ' ';
+          temp += `#${ word }`;
+        }
+      }
+      result += `\(${ temp.replaceAll(' ', ' OR ') }\)`;
+    }
+
+    // 다음 계정에서 작성
+    if ( accRef1?.current?.value !== '' ) {
+      if ( result !== '' ) result += ' ';
+      let temp:string = '';
+      const words = accRef1?.current?.value.split(" ");
+      if ( words !== undefined ) {
+        for (const word of words) {
+          if ( temp !== '' ) temp += ' ';
+          temp += `from:${ word }`;
+        }
+      }
+      result += `\(${ temp.replaceAll(' ', ' OR ') }\)`;
+    }
+
+    // 다음 계정으로
+    if ( accRef2?.current?.value !== '' ) {
+      if ( result !== '' ) result += ' ';
+      let temp:string = '';
+      const words = accRef2?.current?.value.split(" ");
+      if ( words !== undefined ) {
+        for (const word of words) {
+          if ( temp !== '' ) temp += ' ';
+          temp += `to:${ word }`;
+        }
+      }
+      result += `\(${ temp.replaceAll(' ', ' OR ') }\)`;
+    }
+
+    // 다음 계정 멘션
+    if ( accRef3?.current?.value !== '' ) {
+      if ( result !== '' ) result += ' ';
+      let temp:string = '';
+      const words = accRef3?.current?.value.split(" ");
+      if ( words !== undefined ) {
+        for (const word of words) {
+          if ( temp !== '' ) temp += ' ';
+          temp += `@${ word }`;
+        }
+      }
+      result += `\(${ temp.replaceAll(' ', ' OR ') }\)`;
+    }
+
+    if ( !linkSwitch ) {
+      if ( result !== '' ) result += ' ';
+      result += '-filter:links';
+    }
+    else if ( !linkOption ) {
+      if ( result !== '' ) result += ' ';
+      result += 'filter:links';
+    }
+
+    if ( !commentSwitch ) {
+      if ( result !== '' ) result += ' ';
+      result += '-filter:replies';
+    }
+    else if ( !commentOption ) {
+      if ( result !== '' ) result += ' ';
+      result += 'filter:replies';
+    }
+    
+    
+
     alert( result );
   };
 
@@ -218,7 +315,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
         }}>
           <div className='filterDivRow'>
             <h6>
-              답글 및 원본 트윗 포함
+              링크가 추가된 트윗 포함
             </h6>
             <Form.Check 
                 type='checkbox'
@@ -229,7 +326,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
           </div>
           <div className='filterDivRow'>
             <h6>
-              답글만 보기
+              링크가 추가된 트윗만 보기
             </h6>
             <Form.Check 
                 type='checkbox'
