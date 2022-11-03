@@ -1,15 +1,15 @@
 import Container from 'react-bootstrap/Container';
 import ConfirmButton from './confirmButton'
-import AdvancedSearchSwitch from './advancedSearchSwitch';
+import ToggleSwitch from './toggleSwitch';
 import Card from 'react-bootstrap/Card';
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import Form from 'react-bootstrap/Form';
+import TextBox from './textBox';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 
 const MainBody = ( ) => {
-  const [advancedSearch, setAdvancedSearch] = useState<boolean | undefined>(false);
+  const [ advancedSearch, setAdvancedSearch ] = useState<boolean | undefined>( true );
+  const basicSearchRef = useRef<HTMLInputElement>( null );
 
   return (
     <Container style={{
@@ -23,12 +23,17 @@ const MainBody = ( ) => {
           height: '500px'
         }}>
         <Card.Body>
-          <FloatingLabel controlId="floatingPassword" label="트위터 검색">
-            <Form.Control placeholder='트위터 검색'/>
-          </FloatingLabel>
-          <AdvancedSearchSwitch setAdvancedSearch={setAdvancedSearch}/>
+          <TextBox
+            controlID={ 'basicSearch' }
+            floatingLabel={ '트위터 검색' } 
+            textBoxRef={ basicSearchRef }
+          />
+          <ToggleSwitch 
+            label={ '고급 검색' }
+            switchStatus={ advancedSearch }
+            setSwitchStatus={ setAdvancedSearch }
+          />
           <ConfirmButton />
-
         </Card.Body>
       </Card>
     </Container>
