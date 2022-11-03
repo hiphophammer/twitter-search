@@ -1,6 +1,7 @@
 interface ToggleSwitchProp {
   id?: string,
   label?: string,
+  disabled?: boolean,
   switchStatus: boolean,
   setSwitchStatus: React.Dispatch<React.SetStateAction<boolean>>,
 }

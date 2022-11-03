@@ -11,6 +11,7 @@ const ToggleSwitch = ( props:ToggleSwitchProp ) => {
     <Form>
       <Form.Check 
         type="switch"
+        disabled={ props.disabled? true : false }
         id={ props.id ? props.id : '' }
         label={ props.label ? props.label : '' }
         onChange={ switchClick }
