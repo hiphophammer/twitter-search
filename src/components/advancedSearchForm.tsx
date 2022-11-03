@@ -1,14 +1,23 @@
 import TextBox from "./textBox";
 import Form from 'react-bootstrap/Form';
 import { useRef, useState } from 'react'
-import ConfirmButton from './confirmButton'
+import Button from 'react-bootstrap/Button';
+import { AdvancedSearchProp } from "./interfaces";
 
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import InputGroup from 'react-bootstrap/InputGroup';
 import ToggleSwitch from "./toggleSwitch";
 
-const AdvancedSearchForm = ( ) => {
+const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
+  // basic search is taken care in mainBody; just focus on adv. search logic here
+  const buttonClick = ( ) => {
+    let result = '';
+    if ( wordRef1.current )
+      result += wordRef1.current.value;
+    alert( result );
+  };
+
   const [ section1, setSection1 ] = useState<boolean>( true );
   const [ section2, setSection2 ] = useState<boolean>( true );
   const [ section3, setSection3 ] = useState<boolean>( true );
@@ -323,7 +332,11 @@ const AdvancedSearchForm = ( ) => {
         </div>
       </div>
       <hr />
-      <ConfirmButton />
+      <Button
+        className='confirmButton'
+        onClick={ buttonClick }>
+        확인
+      </Button>
     </>
   );
 }

@@ -1,14 +1,21 @@
 import Container from 'react-bootstrap/Container';
-import ConfirmButton from './confirmButton'
 import ToggleSwitch from './toggleSwitch';
 import Card from 'react-bootstrap/Card';
 import TextBox from './textBox';
 import AdvancedSearchForm from './advancedSearchForm'
+import Button from 'react-bootstrap/Button';
 
 import { useState, useRef } from 'react';
 
 
 const MainBody = ( ) => {
+  const buttonClick = ( ) => {
+    if ( !basicSearchRef.current || basicSearchRef.current.value === '' ) {
+      alert ( '검색 내용을 입력해주세요.' );
+      return;
+    }
+    alert ( basicSearchRef.current.value );
+  };
   const [ advancedSearch, setAdvancedSearch ] = useState<boolean>( false );
   const basicSearchRef = useRef<HTMLInputElement>( null );
 
@@ -40,8 +47,15 @@ const MainBody = ( ) => {
           />
           {/* Advanced Search */}
           <div style={{ display: ( advancedSearch ? 'block' : 'none' )}}>
-            <AdvancedSearchForm />
+            <AdvancedSearchForm advanced={ advancedSearch } basicRef={ basicSearchRef }/>
           </div>
+          <Button
+            className='confirmButton'
+            onClick={ buttonClick }
+            style={{ display: ( advancedSearch ? 'none' : 'block' ) }}
+            >
+              확인
+          </Button>
         </Card.Body>
       </Card>
     </Container>

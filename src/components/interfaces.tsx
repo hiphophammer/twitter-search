@@ -6,6 +6,11 @@ interface ToggleSwitchProp {
   setSwitchStatus: React.Dispatch<React.SetStateAction<boolean>>,
 }
 
+interface AdvancedSearchProp {
+  advanced: boolean,
+  basicRef: React.RefObject<HTMLInputElement>
+}
+
 interface TextBoxProp {
   controlID?: string,
   disabled?: boolean,
@@ -13,4 +18,4 @@ interface TextBoxProp {
   textBoxRef: React.RefObject<HTMLInputElement>,
 }
 
-export { type ToggleSwitchProp, type TextBoxProp };
+export { type ToggleSwitchProp, type TextBoxProp, type AdvancedSearchProp };
