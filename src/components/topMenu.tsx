@@ -34,6 +34,7 @@ const TopMenu = ( ) => {
                 alt='Korean'
                 src={KRFlag}
                 height='20'
+                title='한국어/Korean'
                 className="d-inline-block align-center"
               />{' '}
             </Nav.Link>
@@ -42,6 +43,7 @@ const TopMenu = ( ) => {
                 alt='English (United States)'
                 src={USFlag}
                 height='20'
+                title='English (US)'
                 className="d-inline-block align-center"
               />{' '}
             </Nav.Link>
