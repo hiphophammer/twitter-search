@@ -17,9 +17,22 @@ h5 {
   flex-direction: column;
 }
 
-#customSwitch {
+.form-check-input {
   scale: 110%;
   margin-right: 5px;
+}
+
+h6.bold {
+  width: 32rem;
+  font-weight: bold;
+}
+
+.filterFlex {
+  display:flex;
+}
+
+.bodyCard {
+  background-color: gray;
 }
 
 #dropdown {

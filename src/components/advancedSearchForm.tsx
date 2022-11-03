@@ -1,6 +1,7 @@
 import TextBox from "./textBox";
 import Form from 'react-bootstrap/Form';
 import { useRef, useState } from 'react'
+import Card from 'react-bootstrap/Card';
 
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
@@ -19,10 +20,20 @@ const AdvancedSearchForm = ( ) => {
   const accRef2 = useRef<HTMLInputElement>( null ); // 다음 계정으로 보냄
   const accRef3 = useRef<HTMLInputElement>( null ); // 다음 계정 멘션
 
+  const [ commentSwitch, setCommentSwitch ] = useState<boolean>( true );
+  const [ linkSwitch, setLinkSwitch ] = useState<boolean>( true );
+
   const participationRef1 = useRef<HTMLInputElement>( null ); // 최소 답글 수
   const participationRef2 = useRef<HTMLInputElement>( null ); // 최소 마음에 들어요 수
   const participationRef3 = useRef<HTMLInputElement>( null ); // 최소 리트윗 수
 
+  const beginningMonth = useRef<HTMLInputElement>( null );
+  const beginningDay = useRef<HTMLInputElement>( null );
+  const beginningYear = useRef<HTMLInputElement>( null );
+
+  const endingMonth = useRef<HTMLInputElement>( null );
+  const endingDay = useRef<HTMLInputElement>( null );
+  const endingYear = useRef<HTMLInputElement>( null );
 
   const [ word, setWord ] = useState<boolean>( false );
   
@@ -63,7 +74,6 @@ const AdvancedSearchForm = ( ) => {
         floatingLabel="다음 단어 제외"
         textBoxRef={ wordRef4 }
       />
-      
       <Form.Text muted style={{marginLeft: '10px'}}>
         예: 고양이 개 · '고양이'를 포함하지 않고 '개'를 포함하지 않음
       </Form.Text>
@@ -80,7 +90,6 @@ const AdvancedSearchForm = ( ) => {
         <DropdownButton
             className='w-100'
             variant="outline-dark"
-            menuVariant="dark"
             title="모든 언어"
             key={'모든 언어'}
             id='dropdown'
@@ -120,8 +129,25 @@ const AdvancedSearchForm = ( ) => {
       </Form.Text>
       <div style={{marginTop: '20px'}}></div>
       <hr />
+
       <h5>필터</h5>
+      <div className='filterFlex'>
+        <h6 className='bold'>답글</h6>
+        <ToggleSwitch
+          id='filterSwitch'
+          switchStatus={ commentSwitch }
+          setSwitchStatus={ setCommentSwitch }
+        />
+      </div>
+      
+      <Card 
+        style={{ width: '30rem' }}
+        className='bodyCard'>
+        ㅇㅅㅇ
+      </Card>
+      <h6 className='bold'>링크</h6>
       <hr />
+
       <h5>참여</h5>
       <TextBox 
         floatingLabel="최소 답글 수"
@@ -148,7 +174,25 @@ const AdvancedSearchForm = ( ) => {
       </Form.Text>
       <div style={{marginTop: '20px'}}></div>
       <hr />
+
       <h5>날짜</h5>
+      <div style={{marginTop: '20px'}}></div>
+      <h6>시작</h6>
+      <div style={{marginTop: '20px'}}></div>
+      <h6>끝</h6>
+      <InputGroup className="mb-3">
+        <DropdownButton
+            className='w-100'
+            variant="outline-dark"
+            title="월"
+            key={'모든 언어'}
+            id='dropdown_date'
+          >
+          <Dropdown.Item>1월</Dropdown.Item>
+          <Dropdown.Item>2월</Dropdown.Item>
+        </DropdownButton>
+      </InputGroup>
+      <hr />
     </>
   );
 }

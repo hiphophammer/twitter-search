@@ -23,8 +23,8 @@ const ToggleSwitch = ( props:ToggleSwitchProp ) => {
     <Form>
       <Form.Check 
         type="switch"
-        id='customSwitch'
-        label={ props.label }
+        id={ props.id ? props.id : '' }
+        label={ props.label ? props.label : '' }
         onChange={ switchClick }
         checked={ props.switchStatus }
       />
