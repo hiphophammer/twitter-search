@@ -14,9 +14,8 @@ const TopMenu = ( ) => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="https://github.com/hiphophammer" target="_blank" rel="noopener noreferrer">GitHub</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+            <Nav.Link href="">로그인</Nav.Link>
+            <NavDropdown title="Dropdown" id="collasible-nav-dropdown" style={{display:'none'}}>
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
