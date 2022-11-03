@@ -3,6 +3,7 @@ import ConfirmButton from './confirmButton'
 import ToggleSwitch from './toggleSwitch';
 import Card from 'react-bootstrap/Card';
 import TextBox from './textBox';
+import AdvancedSearchForm from './advancedSearchForm'
 
 import { useState, useRef } from 'react';
 
@@ -36,12 +37,12 @@ const MainBody = ( ) => {
             setHeight={{
               cardHeight: cardHeight,
               setCardHeight: setCardHeight, 
-              heightOffset: 150
+              heightOffset: 1000
             }}
           />
           {/* Advanced Search */}
           <div style={{ display: ( advancedSearch ? 'block' : 'none' )}}>
-            ㅇㅅㅇ
+            <AdvancedSearchForm />
           </div>
           <ConfirmButton />
         </Card.Body>
