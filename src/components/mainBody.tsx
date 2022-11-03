@@ -28,6 +28,7 @@ const MainBody = ( ) => {
         }}>
         <Card.Body>
           <TextBox
+            disabled={ advancedSearch }
             controlID={ 'basicSearch' }
             floatingLabel={ '트위터 검색' } 
             textBoxRef={ basicSearchRef }

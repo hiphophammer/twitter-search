@@ -8,6 +8,7 @@ interface ToggleSwitchProp {
 
 interface TextBoxProp {
   controlID?: string,
+  disabled?: boolean,
   floatingLabel: string,
   textBoxRef: React.RefObject<HTMLInputElement>,
 }
