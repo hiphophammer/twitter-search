@@ -21,7 +21,7 @@ const MainBody = ( ) => {
         alignItems: 'center'
       }}>
       <Card style={{ 
-          width: '30rem',
+          width: '36rem',
           height: `${cardHeight}px`
         }}>
         <Card.Body>
@@ -37,7 +37,7 @@ const MainBody = ( ) => {
             setHeight={{
               cardHeight: cardHeight,
               setCardHeight: setCardHeight, 
-              heightOffset: 1000
+              heightOffset: 1500
             }}
           />
           {/* Advanced Search */}
