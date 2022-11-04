@@ -240,25 +240,25 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
           textBoxRef={ accRef1 }
         />
         <Form.Text muted style={{marginLeft: '10px'}}>
-          예: @Twitter · @Twitter에서 보냄
+          { props?.langObj?.section2_desc1 }
         </Form.Text>
         <div style={{marginTop: '20px'}}></div>
         <hr />
         <TextBox 
-          floatingLabel="다음 계정으로 보냄"
+          floatingLabel={ props?.langObj?.section2_label2 }
           textBoxRef={ accRef2 }
         />
         <Form.Text muted style={{marginLeft: '10px'}}>
-          예: @Twitter · @Twitter에 답글로 보냄
+          { props?.langObj?.section2_desc2 }
         </Form.Text>
         <div style={{marginTop: '20px'}}></div>
         <hr />
         <TextBox 
-          floatingLabel="다음 계정 멘션"
+          floatingLabel={ props?.langObj?.section2_label3 }
           textBoxRef={ accRef3 }
         />
         <Form.Text muted style={{marginLeft: '10px'}}>
-          예: @SFBART @Caltrain · @SFBART 님을 멘션하거나 @Caltrain 님을 멘션함
+          { props?.langObj?.section2_desc3 }
         </Form.Text>
         <div style={{marginTop: '20px'}}></div>
       </div>
