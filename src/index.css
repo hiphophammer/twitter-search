@@ -16,6 +16,9 @@ body {
 .dropdown-menu  {
   width: 100%;
 }
+.dateEntryDiv > div:nth-child(2) > div  {
+  --bs-dropdown-min-width: 0px;
+}
 #dropdown {
   display:flex;
   align-items: flex-end;
