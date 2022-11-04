@@ -9,7 +9,8 @@ interface LangObj {
 
 interface ShowModal {
   show: boolean,
-  setShow: React.Dispatch<React.SetStateAction<boolean>>
+  setShow: React.Dispatch<React.SetStateAction<boolean>>,
+  langObj?: any
 }
 
 interface ToggleSwitchProp {

@@ -9,15 +9,17 @@ function SettingsModal( props:ShowModal ) {
     <>
       <Modal show={props.show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>업데이트 내역</Modal.Title>
+          <Modal.Title> { props.langObj.settingsModal.title } </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          ㅈㅅ 아직 아무것도 되는 게 없음 ㅎ;; ㅠ <br />
-          Sry.. nothing works as of yet.
+          {`ㅇㅅ< 열심히 준비중임?!`}
         </Modal.Body>
         <Modal.Footer>
+          <Button variant="primary" onClick={handleClose}>
+            { props.langObj.settingsModal.button1 }
+          </Button>
           <Button variant="secondary" onClick={handleClose}>
-            닫기
+            { props.langObj.settingsModal.button2 }
           </Button>
         </Modal.Footer>
       </Modal>
