@@ -3,14 +3,18 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import UpdateModal from './updateModal';
+import SettingsModal from './settingsModal';
 import { useState } from 'react';
 
 import { LangProp } from './interfaces';
 
 const TopMenu = ( props:LangProp ) => {
   const [ showUpdate, setShowUpdate ] = useState<boolean> ( false );
+  const [ showSettings, setShowSettings ] = useState<boolean> ( false );
 
   const handleUpdate=()=>{ setShowUpdate(!showUpdate) };
+  const handleSettings=()=>{ setShowSettings(!showSettings) };
+
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
@@ -28,7 +32,8 @@ const TopMenu = ( props:LangProp ) => {
             <Nav.Link>{ props.langObj.langObj?.topMenu?.login }</Nav.Link>
             <Nav.Link onClick={ handleUpdate }>{ props.langObj.langObj?.topMenu?.updates }</Nav.Link>
             <UpdateModal show={ showUpdate } setShow={ setShowUpdate }/>
-            <Nav.Link>{ props.langObj.langObj?.topMenu?.settings }</Nav.Link>
+            <Nav.Link onClick={ handleSettings }>{ props.langObj.langObj?.topMenu?.settings }</Nav.Link>
+            <SettingsModal show={ showSettings } setShow={ setShowSettings } langObj={ props.langObj.langObj }/>
             <NavDropdown title="Dropdown" id="collasible-nav-dropdown" style={{display:'none'}}>
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
