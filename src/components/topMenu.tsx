@@ -9,26 +9,25 @@ import USFlag from './flags/usa.svg';
 import { LangProp } from './interfaces';
 
 const TopMenu = ( props:LangProp ) => {
-  const [ langObj, setLangObj ] = useState( require( './locale/ko_kr.json' ) );
-  const refreshLang = ( ) => {
-    if ( props.langObj.lang.toLowerCase() === 'ko_kr' ) {
-      setLangObj( require( './locale/ko_kr.json' ) );
-    }
-    else {
-      setLangObj( require( './locale/en_us.json' ) );
-    }
-  };
-  useEffect( refreshLang, [props.langObj.lang] );
+  // const refreshLang = ( ) => {
+  //   if ( !props.langObj ) {
+  //     props.langObj.setLangObj( require( './locale/ko_kr.json' ) );
+  //   }
+  //   else {
+  //     props.langObj.setLangObj( require( './locale/en_us.json' ) );
+  //   }
+  // };
+  // useEffect( refreshLang, [props.langObj.langObj] );
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">{ langObj.topMenu.title }</Navbar.Brand>
+        <Navbar.Brand href="#home">{ props.langObj.langObj?.topMenu?.title }</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link>{ langObj.topMenu.login }</Nav.Link>
-            <Nav.Link>{ langObj.topMenu.settings }</Nav.Link>
+            <Nav.Link>{ props.langObj.langObj?.topMenu?.login }</Nav.Link>
+            <Nav.Link>{ props.langObj.langObj?.topMenu?.settings }</Nav.Link>
             <NavDropdown title="Dropdown" id="collasible-nav-dropdown" style={{display:'none'}}>
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
@@ -42,7 +41,7 @@ const TopMenu = ( props:LangProp ) => {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link onClick={ ()=>{ props.langObj.setLang('ko_kr'); } }>
+            <Nav.Link onClick={ ()=>{ props.langObj.setLangObj( require( './locale/ko_kr.json' ) ); } }>
               <img 
                 alt='Korean'
                 src={KRFlag}
@@ -51,7 +50,7 @@ const TopMenu = ( props:LangProp ) => {
                 className="d-inline-block align-center"
               />{' '}
             </Nav.Link>
-            <Nav.Link onClick={ ()=>{ props.langObj.setLang('en_us'); } }>
+            <Nav.Link onClick={ ()=>{ props.langObj.setLangObj( require( './locale/en_us.json' ) ); } }>
               <img 
                 alt='English (United States)'
                 src={USFlag}

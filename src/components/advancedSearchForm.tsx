@@ -162,12 +162,12 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
   const endingMonth = useRef<HTMLInputElement>( null );
   const endingDay = useRef<HTMLInputElement>( null );
   const endingYear = useRef<HTMLInputElement>( null );
-  
+
   return (
     <>
       <div style={{marginTop: '20px'}}></div>
       <div className='flexTitle'>
-        <h5>단어</h5>
+        <h5>{ props?.langObj?.header1 }</h5>
         <ToggleSwitch
           disabled={ true }
           switchStatus={ section1 }
@@ -176,48 +176,48 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
       </div>
       <div style={{display:(section1?'block':'none')}}>
         <TextBox 
-          floatingLabel="다음 단어 모두 포함"
+          floatingLabel= { props?.langObj?.section1_label1 }
           textBoxRef={ wordRef1 }
         />
         <Form.Text muted style={{marginLeft: '10px'}}>
-          예: 무슨 일 · '무슨'과 '일' 모두 포함
+          { props?.langObj?.section1_desc1 }
         </Form.Text>
         <div style={{marginTop: '20px'}}></div>
         <TextBox 
-          floatingLabel="다음 문구 그대로 포함"
+          floatingLabel={ props?.langObj?.section1_label2 }
           textBoxRef={ wordRef2 }
         />
         <Form.Text muted style={{marginLeft: '10px'}}>
-          예: 깜짝 할인 · '깜짝 할인'이라는 문구를 그대로 포함
+          { props?.langObj?.section1_desc2 }
         </Form.Text>
         <div style={{marginTop: '20px'}}></div>
         <TextBox 
-          floatingLabel="다음 단어 중 하나 이상 포함"
+          floatingLabel={ props?.langObj?.section1_label3 }
           textBoxRef={ wordRef3 }
         />
         <Form.Text muted style={{marginLeft: '10px'}}>
-          예: 고양이 개 · '고양이' 또는 '개' 또는 둘 다 포함
+          { props?.langObj?.section1_desc3 }
         </Form.Text>
         <div style={{marginTop: '20px'}}></div>
         <TextBox 
-          floatingLabel="다음 단어 제외"
+          floatingLabel={ props?.langObj?.section1_label4 }
           textBoxRef={ wordRef4 }
         />
         <Form.Text muted style={{marginLeft: '10px'}}>
-          예: 고양이 개 · '고양이'를 포함하지 않고 '개'를 포함하지 않음
+          { props?.langObj?.section1_desc4 }
         </Form.Text>
         <div style={{marginTop: '20px'}}></div>
         <TextBox 
-          floatingLabel="다음 해시태그"
+          floatingLabel={ props?.langObj?.section1_label5 }
           textBoxRef={ wordRef5 }
         />
         <Form.Text muted style={{marginLeft: '10px'}}>
-          Example: #추억공유 · 해시태그 #추억공유 포함
+          { props?.langObj?.section1_desc5 }
         </Form.Text>
         <div style={{marginTop: '20px'}}></div>
         <InputGroup className="mb-3">
           <DropdownButton
-              title="모든 언어"
+              title={ props?.langObj?.section1_label6 }
               id='dropdown'
             >
             <Dropdown.Item href="#">모든 언어</Dropdown.Item>
@@ -228,7 +228,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
       </div>
       <hr />
       <div className='flexTitle'>
-        <h5>계정</h5>
+        <h5>{ props?.langObj?.header2 }</h5>
         <ToggleSwitch 
           switchStatus={ section2 }
           setSwitchStatus={ setSection2 }
@@ -236,7 +236,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
       </div>
       <div style={{display:(section2?'block':'none')}}>
         <TextBox 
-          floatingLabel="다음 계정에서 작성"
+          floatingLabel={ props?.langObj?.section2_label1 }
           textBoxRef={ accRef1 }
         />
         <Form.Text muted style={{marginLeft: '10px'}}>
@@ -265,7 +265,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
       <hr />
 
       <div className='flexTitle'>
-        <h5>필터</h5>
+        <h5>{ props?.langObj?.header3 }</h5>
         <ToggleSwitch 
           switchStatus={ section3 }
           setSwitchStatus={ setSection3 }
@@ -295,7 +295,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
                 type='checkbox'
                 id='default-radio'
                 checked={ commentOption }
-                onClick={()=>{ setCommentOption( true )}}
+                onChange={()=>{ setCommentOption( true )}}
             />
           </div>
           <div className='filterDivRow'>
@@ -306,7 +306,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
                 type='checkbox'
                 id='default-radio'
                 checked={ !commentOption }
-                onClick={()=>{ setCommentOption( false )}}
+                onChange={()=>{ setCommentOption( false )}}
             />
           </div>
         </div>
@@ -334,7 +334,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
                 type='checkbox'
                 id='default-radio'
                 checked={ linkOption }
-                onClick={()=>{ setLinkOption( true )}}
+                onChange={()=>{ setLinkOption( true )}}
             />
           </div>
           <div className='filterDivRow'>
@@ -345,7 +345,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
                 type='checkbox'
                 id='default-radio'
                 checked={ !linkOption }
-                onClick={()=>{ setLinkOption( false )}}
+                onChange={()=>{ setLinkOption( false )}}
             />
           </div>
         </div>
@@ -354,7 +354,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
       <hr />
 
       <div className='flexTitle'>
-        <h5>참여</h5>
+        <h5>{ props?.langObj?.header4 }</h5>
         <ToggleSwitch 
           switchStatus={ section4 }
           setSwitchStatus={ setSection4 }
@@ -392,7 +392,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
       <hr />
 
       <div className='flexTitle'>
-        <h5>날짜</h5>
+        <h5>{ props?.langObj?.header5 }</h5>
         <ToggleSwitch 
           switchStatus={ section5 }
           setSwitchStatus={ setSection5 }

@@ -7,12 +7,12 @@ import { useState } from 'react';
 import './App.module.css';
 
 function App() {
-  const [ lang, setLang ] = useState<string>( 'KR' );
+  const [ langObj, setLangObj ] = useState( require( './components/locale/ko_kr.json' ) );
 
   return (
     <div className="App">
-      <TopMenu langObj={{lang, setLang}}/>
-      <MainBody />
+      <TopMenu langObj={{langObj, setLangObj}}/>
+      <MainBody langObj={langObj}/>
       <BottomMenu />
     </div>
   );

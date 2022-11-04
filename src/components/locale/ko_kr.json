@@ -3,5 +3,58 @@
     "title": "트위터 검색기",
     "login": "로그인",
     "settings": "설정"
-  }
+  },
+  "confirm": "확인",
+  "advancedSearch": "고급 검색",
+  "tweeterSearch": "트위터 검색",
+  
+  "header1": "단어",
+  "header2": "계정",
+  "header3": "필터",
+  "header4": "참여",
+  "header5": "날짜",
+
+  "alert_empty": "검색 내용을 입력해주세요.",
+
+  "section1_label1": "다음 단어 모두 포함",
+  "section1_label2": "다음 문구 그대로 포함",
+  "section1_label3": "다음 단어 중 하나 이상 포함",
+  "section1_label4": "다음 단어 제외",
+  "section1_label5": "다음 해시태그",
+  "section1_label6": "모든 언어",
+
+  "section1_desc1": "예: 무슨 일 · '무슨'과 '일' 모두 포함",
+  "section1_desc2": "예: 깜짝 할인 · '깜짝 할인'이라는 문구를 그대로 포함",
+  "section1_desc3": "예: 고양이 개 · '고양이' 또는 '개' 또는 둘 다 포함",
+  "section1_desc4": "예: 고양이 개 · '고양이'를 포함하지 않고 '개'를 포함하지 않음",
+  "section1_desc5": "Example: #추억공유 · 해시태그 #추억공유 포함",
+
+  "section2_label1": "다음 계정에서 작성",
+  "section2_label2": "다음 계정으로 보냄",
+  "section2_label3": "다음 계정 멘션",
+
+  "section2_desc1": "예: @Twitter · @Twitter에서 보냄",
+  "section2_desc2": "예: @Twitter · @Twitter에 답글로 보냄",
+  "section2_desc3": "예: @SFBART @Caltrain · @SFBART 님을 멘션하거나 @Caltrain 님을 멘션함",
+
+  "section3_label1": "답글",
+  "section3_label2": "답글 및 원본 트윗 포함",
+  "section3_label3": "답글만 보기",
+  "section3_label4": "링크",
+  "section3_label5": "링크가 추가된 트윗 포함",
+  "section3_label6": "링크가 추가된 트윗만 보기",
+
+  "section4_label1": "최소 답글 수",
+  "section4_label2": "최소 마음에 들어요 수",
+  "section4_label3": "최소 리트윗 수",
+
+  "section4_desc1": "예: 280 · 답글이 최소 280개 이상인 트윗",
+  "section4_desc2": "예: 280 · 마음에 들어요 수가 최소 280회 이상인 트윗",
+  "section4_desc3": "예: 280 · 리트윗이 최소 280회 이상인 트윗",
+
+  "section5_label1": "시작",
+  "section5_label2": "끝",
+  "section5_label3": "월",
+  "section5_label4": "일",
+  "section5_label5": "년"
 }

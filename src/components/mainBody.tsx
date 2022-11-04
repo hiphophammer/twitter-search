@@ -6,12 +6,13 @@ import AdvancedSearchForm from './advancedSearchForm'
 import Button from 'react-bootstrap/Button';
 
 import { useState, useRef } from 'react';
+import { LangObj } from './interfaces';
 
 
-const MainBody = ( ) => {
+const MainBody = ( props:LangObj ) => {
   const buttonClick = ( ) => {
     if ( !basicSearchRef.current || basicSearchRef.current.value === '' ) {
-      alert ( '검색 내용을 입력해주세요.' );
+      alert (  props.langObj.langObj.alert_empty );
       return;
     }
     alert ( basicSearchRef.current.value );
@@ -37,24 +38,24 @@ const MainBody = ( ) => {
           <TextBox
             disabled={ advancedSearch }
             controlID={ 'basicSearch' }
-            floatingLabel={ '트위터 검색' } 
+            floatingLabel={  props.langObj.tweeterSearch } 
             textBoxRef={ basicSearchRef }
           />
           <ToggleSwitch 
-            label={ '고급 검색' }
+            label={ props.langObj.advancedSearch }
             switchStatus={ advancedSearch }
             setSwitchStatus={ setAdvancedSearch }
           />
           {/* Advanced Search */}
           <div style={{ display: ( advancedSearch ? 'block' : 'none' )}}>
-            <AdvancedSearchForm advanced={ advancedSearch } basicRef={ basicSearchRef }/>
+            <AdvancedSearchForm advanced={ advancedSearch } basicRef={ basicSearchRef } langObj={ props.langObj }/>
           </div>
           <Button
             className='confirmButton'
             onClick={ buttonClick }
             style={{ display: ( advancedSearch ? 'none' : 'block' ) }}
             >
-              확인
+              { props.langObj.confirm }
           </Button>
         </Card.Body>
       </Card>

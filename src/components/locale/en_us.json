@@ -3,5 +3,56 @@
     "title": "Tweet Snitch",
     "login": "Sign in",
     "settings": "Settings"
-  }
+  },
+  "confirm": "Confirm",
+  "advancedSearch": "Advanced Search",
+  "tweeterSearch": "Search Twitter",
+  
+  "header1": "Words",
+  "header2": "Accounts",
+  "header3": "Filters",
+  "header4": "Engagement",
+  "header5": "Dates",
+
+  "alert_empty": "The search query cannot be empty.",
+
+  "section1_label1": "All of these words",
+  "section1_label2": "This exact phrase",
+  "section1_label3": "Any of these words",
+  "section1_label4": "None of these words",
+  "section1_label5": "These hashtags",
+  "section1_label6": "Any language",
+
+  "section1_desc1": "Example: what’s happening · contains both “what’s” and “happening”",
+  "section1_desc2": "Example: happy hour · contains the exact phrase “happy hour”",
+  "section1_desc3": "Example: cats dogs · contains either “cats” or “dogs” (or both)",
+  "section1_desc4": "Example: cats dogs · does not contain “cats” and does not contain “dogs”",
+  "section1_desc5": "Example: #ThrowbackThursday · contains the hashtag #ThrowbackThursday",
+  "section2_label1": "From these accounts",
+  "section2_label2": "To these accounts",
+  "section2_label3": "Mentioning these accounts",
+  "section2_desc1": "Example: @Twitter · sent from @Twitter",
+  "section2_desc2": "Example: @Twitter · sent in reply to @Twitter",
+  "section2_desc3": "Example: @SFBART @Caltrain · mentions @SFBART or mentions @Caltrain",
+
+  "section3_label1": "Replies",
+  "section3_label2": "Include replies and original Tweets",
+  "section3_label3": "Only show replies",
+  "section3_label4": "Links",
+  "section3_label5": "Include Tweets with links",
+  "section3_label6": "Only show Tweets with links",
+
+  "section4_label1": "Minimum replies",
+  "section4_label2": "Minimum Likes",
+  "section4_label3": "Minimum Retweets",
+
+  "section4_desc1": "Example: 280 · Tweets with at least 280 replies",
+  "section4_desc2": "Example: 280 · Tweets with at least 280 Likes",
+  "section4_desc3": "Example: 280 · Tweets with at least 280 Retweets",
+
+  "section5_label1": "From",
+  "section5_label2": "To",
+  "section5_label3": "Month",
+  "section5_label4": "Day",
+  "section5_label5": "Year"
 }

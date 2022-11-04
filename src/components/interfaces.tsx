@@ -1,6 +1,10 @@
 interface LangProp {
-  langObj: { lang:string ,
-          setLang:React.Dispatch<React.SetStateAction<string>> }
+  langObj: { langObj: any,
+          setLangObj:React.Dispatch<React.SetStateAction<any>> }
+}
+
+interface LangObj {
+  langObj: any
 }
 
 interface ToggleSwitchProp {
@@ -13,7 +17,8 @@ interface ToggleSwitchProp {
 
 interface AdvancedSearchProp {
   advanced: boolean,
-  basicRef: React.RefObject<HTMLInputElement>
+  basicRef: React.RefObject<HTMLInputElement>,
+  langObj: any
 }
 
 interface TextBoxProp {
@@ -24,4 +29,4 @@ interface TextBoxProp {
   textBoxRef: React.RefObject<HTMLInputElement>,
 }
 
-export { type LangProp, type ToggleSwitchProp, type TextBoxProp, type AdvancedSearchProp };
+export { type LangProp, type LangObj, type ToggleSwitchProp, type TextBoxProp, type AdvancedSearchProp };
