@@ -20,7 +20,7 @@ body {
 .dropdown-menu  {
   width: 100%;
 }
-.dateEntryDiv > div:nth-child(2) > div  {
+.dateEntryDiv > div:nth-child(2) > div > div  {
   --bs-dropdown-min-width: 0px;
 }
 #dropdown {
