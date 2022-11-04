@@ -12,6 +12,87 @@ body {
   height:100%;
 }
 
+/* language dropdown items */
+.dropdown-menu  {
+  width: 100%;
+}
+#dropdown {
+  display:flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.dropdown-toggle::after {
+  margin-bottom: 20px;
+}
+
+.dropdownLabel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 0.75rem;
+  overflow: hidden;
+  text-align: start;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+  border: 1px solid transparent;
+  transform-origin: 0 0;
+
+  opacity: .65;
+  transform: scale(.85) translateY(-0.5rem) translateX(0.15rem);
+}
+
+.monthDropdownLabel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 0.75rem;
+  overflow: hidden;
+  text-align: start;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+  border: 1px solid transparent;
+  transform-origin: 0 0;
+
+  opacity: .65;
+  transform: scale(.85) translateY(-5rem) translateX(0.15rem);
+}
+.dayDropdownLabel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 0.75rem;
+  overflow: hidden;
+  text-align: start;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+  border: 1px solid transparent;
+  transform-origin: 0 0;
+
+  opacity: .65;
+  transform: scale(.85) translateY(-5rem) translateX(17rem);
+}
+.yearDropdownLabel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 0.75rem;
+  overflow: hidden;
+  text-align: start;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+  border: 1px solid transparent;
+  transform-origin: 0 0;
+
+  opacity: .65;
+  transform: scale(.85) translateY(-5rem) translateX(28rem);
+}
+
 #root > div > div > div > div > form > div {
   display: flex;
   height: 40px;
@@ -94,13 +175,10 @@ h6.bold {
   text-align: left;
 }
 
-.dateEntryDiv {
-  display:flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 #dropdown_date, #dropdown_month, #dropdown_year {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
   height: 60px;
   border-color: lightgray;
   background-color: transparent;
@@ -108,13 +186,20 @@ h6.bold {
   text-align: left;
   width: 100%;
 }
-.date_button_month {
+
+.dateEntryDiv {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.dateEntryDiv > div:nth-child(1) {
   flex: 0.4;
 }
-.date_button_date {
+.dateEntryDiv > div:nth-child(2) {
   flex: 0.25;
 }
-.date_button_year {
+.dateEntryDiv > div:nth-child(3) {
   flex: 0.30;
 }
 

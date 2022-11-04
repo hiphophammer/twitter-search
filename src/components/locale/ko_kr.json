@@ -1,6 +1,7 @@
 {
   "topMenu": {
     "title": "트위터 검색기",
+    "instructions": "소개",
     "login": "로그인",
     "settings": "설정",
     "updates": "업데이트 내역"
@@ -57,5 +58,7 @@
   "section5_label2": "끝",
   "section5_label3": "월",
   "section5_label4": "일",
-  "section5_label5": "년"
+  "section5_label5": "년",
+
+  "dropdown_lang": "언어"
 }

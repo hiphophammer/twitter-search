@@ -224,6 +224,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
             <Dropdown.Divider />
             <Dropdown.ItemText>추가 중 ㅈㅅ; ㅎ</Dropdown.ItemText>
           </DropdownButton>
+          <label htmlFor='dropdown' className='dropdownLabel'> { props?.langObj?.dropdown_lang } </label>
         </InputGroup>
       </div>
       <hr />
@@ -403,45 +404,55 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
         <h6>{ props?.langObj?.section5_label1 }</h6>
         <div className='dateEntryDiv'>
           <DropdownButton
-              className='date_button_month'
+              className='date_button'
               title={ props?.langObj?.section5_label3 }
               id='dropdown_month'
             >
           </DropdownButton>
           <DropdownButton
-              className='date_button_date'
+              className='date_button'
               title={ props?.langObj?.section5_label4 }
               id='dropdown_date'
             >
           </DropdownButton>
           <DropdownButton
-              className='date_button_year'
+              className='date_button'
               title={ props?.langObj?.section5_label5 }
               id='dropdown_year'
             >
           </DropdownButton>
         </div>
+        <div>
+          <label htmlFor='dropdown_month' className='monthDropdownLabel'> { props?.langObj?.section5_label3 } </label>
+          <label htmlFor='dropdown_date' className='dayDropdownLabel'> { props?.langObj?.section5_label4 } </label>
+          <label htmlFor='dropdown_year' className='yearDropdownLabel'> { props?.langObj?.section5_label5 } </label>
+        </div>
         <div style={{marginTop: '20px'}}></div>
         <h6>{ props?.langObj?.section5_label2 }</h6>
         <div className='dateEntryDiv'>
           <DropdownButton
-              className='date_button_month'
+              className='date_button'
               title={ props?.langObj?.section5_label3 }
               id='dropdown_month'
             >
           </DropdownButton>
           <DropdownButton
-              className='date_button_date'
+              className='date_button'
               title={ props?.langObj?.section5_label4 }
               id='dropdown_date'
             >
           </DropdownButton>
           <DropdownButton
-              className='date_button_year'
+              className='date_button'
               title={ props?.langObj?.section5_label5 }
               id='dropdown_year'
             >
           </DropdownButton>
+        </div>
+        <div>
+          <label htmlFor='dropdown_month' className='monthDropdownLabel'> { props?.langObj?.section5_label3 } </label>
+          <label htmlFor='dropdown_date' className='dayDropdownLabel'> { props?.langObj?.section5_label4 } </label>
+          <label htmlFor='dropdown_year' className='yearDropdownLabel'> { props?.langObj?.section5_label5 } </label>
         </div>
       </div>
       <hr />
