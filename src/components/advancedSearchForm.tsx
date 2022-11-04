@@ -362,30 +362,30 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
       </div>
       <div style={{display:(section4?'block':'none')}}>
         <TextBox 
-          floatingLabel="최소 답글 수"
+          floatingLabel={ props?.langObj?.section4_label1 }
           textBoxRef={ participationRef1 }
           type='number'
         />
         <Form.Text muted style={{marginLeft: '10px'}}>
-          예: 280 · 답글이 최소 280개 이상인 트윗
+          { props?.langObj?.section4_desc1 }
         </Form.Text>
         <div style={{marginTop: '20px'}}></div>
         <TextBox 
-          floatingLabel="최소 마음에 들어요 수"
+          floatingLabel={ props?.langObj?.section4_label2 }
           textBoxRef={ participationRef2 }
           type='number'
         />
         <Form.Text muted style={{marginLeft: '10px'}}>
-          예: 280 · 마음에 들어요 수가 최소 280회 이상인 트윗
+          { props?.langObj?.section4_desc2 }
         </Form.Text>
         <div style={{marginTop: '20px'}}></div>
         <TextBox 
-          floatingLabel="최소 리트윗 수"
+          floatingLabel={ props?.langObj?.section4_label3 }
           textBoxRef={ participationRef3 }
           type='number'
         />
         <Form.Text muted style={{marginLeft: '10px'}}>
-          예: 280 · 리트윗이 최소 280회 이상인 트윗
+          { props?.langObj?.section4_desc3 }
         </Form.Text>
         <div style={{marginTop: '20px'}}></div>
       </div>
@@ -400,45 +400,45 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
       </div>
       <div style={{display:(section5?'block':'none')}}>
         <div style={{marginTop: '20px'}}></div>
-        <h6>시작</h6>
+        <h6>{ props?.langObj?.section5_label1 }</h6>
         <div className='dateEntryDiv'>
           <DropdownButton
               className='date_button_month'
-              title="월"
+              title={ props?.langObj?.section5_label3 }
               id='dropdown_month'
             >
           </DropdownButton>
           <DropdownButton
               className='date_button_date'
-              title="일"
+              title={ props?.langObj?.section5_label4 }
               id='dropdown_date'
             >
           </DropdownButton>
           <DropdownButton
               className='date_button_year'
-              title="년"
+              title={ props?.langObj?.section5_label5 }
               id='dropdown_year'
             >
           </DropdownButton>
         </div>
         <div style={{marginTop: '20px'}}></div>
-        <h6>끝</h6>
+        <h6>{ props?.langObj?.section5_label2 }</h6>
         <div className='dateEntryDiv'>
           <DropdownButton
               className='date_button_month'
-              title="월"
+              title={ props?.langObj?.section5_label3 }
               id='dropdown_month'
             >
           </DropdownButton>
           <DropdownButton
               className='date_button_date'
-              title="일"
+              title={ props?.langObj?.section5_label4 }
               id='dropdown_date'
             >
           </DropdownButton>
           <DropdownButton
               className='date_button_year'
-              title="년"
+              title={ props?.langObj?.section5_label5 }
               id='dropdown_year'
             >
           </DropdownButton>
@@ -448,7 +448,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
       <Button
         className='confirmButton'
         onClick={ buttonClick }>
-        확인
+        { props?.langObj?.confirm }
       </Button>
     </>
   );
