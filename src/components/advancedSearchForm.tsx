@@ -403,56 +403,64 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
         <div style={{marginTop: '20px'}}></div>
         <h6>{ props?.langObj?.section5_label1 }</h6>
         <div className='dateEntryDiv'>
-          <DropdownButton
-              className='date_button'
-              title={ props?.langObj?.section5_label3 }
-              id='dropdown_month'
-            >
-          </DropdownButton>
+          <div>
+            <DropdownButton
+                className='date_button'
+                title={ props?.langObj?.section5_label3 }
+                id='dropdown_month'
+              >
+            </DropdownButton>
+            <label htmlFor='dropdown_month' className='monthDropdownLabel'> { props?.langObj?.section5_label3 } </label>
+          </div>
+          <div>
           <DropdownButton
               className='date_button'
               title={ props?.langObj?.section5_label4 }
               id='dropdown_date'
             >
           </DropdownButton>
-          <DropdownButton
-              className='date_button'
-              title={ props?.langObj?.section5_label5 }
-              id='dropdown_year'
-            >
-          </DropdownButton>
-        </div>
-        <div>
-          <label htmlFor='dropdown_month' className='monthDropdownLabel'> { props?.langObj?.section5_label3 } </label>
-          <label htmlFor='dropdown_date' className='dayDropdownLabel'> { props?.langObj?.section5_label4 } </label>
-          <label htmlFor='dropdown_year' className='yearDropdownLabel'> { props?.langObj?.section5_label5 } </label>
+          <label htmlFor='dropdown_date' className='monthDropdownLabel'> { props?.langObj?.section5_label4 } </label>
+          </div>
+          <div>
+            <DropdownButton
+                className='date_button'
+                title={ props?.langObj?.section5_label5 }
+                id='dropdown_year'
+              >
+            </DropdownButton>
+            <label htmlFor='dropdown_year' className='monthDropdownLabel'> { props?.langObj?.section5_label5 } </label>
+          </div>
         </div>
         <div style={{marginTop: '20px'}}></div>
         <h6>{ props?.langObj?.section5_label2 }</h6>
         <div className='dateEntryDiv'>
-          <DropdownButton
-              className='date_button'
-              title={ props?.langObj?.section5_label3 }
-              id='dropdown_month'
-            >
-          </DropdownButton>
-          <DropdownButton
-              className='date_button'
-              title={ props?.langObj?.section5_label4 }
-              id='dropdown_date'
-            >
-          </DropdownButton>
-          <DropdownButton
-              className='date_button'
-              title={ props?.langObj?.section5_label5 }
-              id='dropdown_year'
-            >
-          </DropdownButton>
-        </div>
-        <div>
-          <label htmlFor='dropdown_month' className='monthDropdownLabel'> { props?.langObj?.section5_label3 } </label>
-          <label htmlFor='dropdown_date' className='dayDropdownLabel'> { props?.langObj?.section5_label4 } </label>
-          <label htmlFor='dropdown_year' className='yearDropdownLabel'> { props?.langObj?.section5_label5 } </label>
+          <div>
+            <DropdownButton
+                className='date_button'
+                title={ props?.langObj?.section5_label3 }
+                id='dropdown_month'
+              >
+            </DropdownButton>
+            <label htmlFor='dropdown_month' className='monthDropdownLabel'> { props?.langObj?.section5_label3 } </label>
+          </div>
+          <div>
+            <DropdownButton
+                className='date_button'
+                title={ props?.langObj?.section5_label4 }
+                id='dropdown_date'
+              >
+            </DropdownButton>
+            <label htmlFor='dropdown_date' className='monthDropdownLabel'> { props?.langObj?.section5_label4 } </label>
+          </div>
+            <div>
+            <DropdownButton
+                className='date_button'
+                title={ props?.langObj?.section5_label5 }
+                id='dropdown_year'
+              >
+            </DropdownButton>
+            <label htmlFor='dropdown_year' className='monthDropdownLabel'> { props?.langObj?.section5_label5 } </label>
+          </div>
         </div>
       </div>
       <hr />

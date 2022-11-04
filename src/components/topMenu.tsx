@@ -24,7 +24,12 @@ const TopMenu = ( props:LangProp ) => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-          <Nav.Link>{ props.langObj.langObj?.topMenu?.instructions }</Nav.Link>
+          <Nav.Link
+            target="_blank" 
+            rel="noopener noreferrer"
+            href='https://github.com/hiphophammer/twitter-search/blob/main/README.md'>
+              { props.langObj.langObj?.topMenu?.instructions }
+            </Nav.Link>
             <Nav.Link>{ props.langObj.langObj?.topMenu?.login }</Nav.Link>
             <Nav.Link>{ props.langObj.langObj?.topMenu?.updates }</Nav.Link>
             <Nav.Link>{ props.langObj.langObj?.topMenu?.settings }</Nav.Link>
