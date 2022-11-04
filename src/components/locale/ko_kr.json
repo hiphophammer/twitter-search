@@ -7,6 +7,11 @@
     "settings": "설정",
     "updates": "업데이트 내역"
   },
+  "settingsModal": {
+    "title": "설정",
+    "button1": "저장하고 닫기",
+    "button2": "취소"
+  },
   "confirm": "확인",
   "advancedSearch": "고급 검색",
   "tweeterSearch": "트위터 검색",

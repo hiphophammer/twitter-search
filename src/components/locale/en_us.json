@@ -7,6 +7,11 @@
     "settings": "Settings",
     "updates": "Updates"
   },
+  "settingsModal": {
+    "title": "Settings",
+    "button1": "Save Changes",
+    "button2": "Cancel"
+  },
   "confirm": "Confirm",
   "advancedSearch": "Advanced Search",
   "tweeterSearch": "Search Twitter",
