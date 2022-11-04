@@ -2,20 +2,15 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { useEffect, useState } from 'react';
+import UpdateModal from './updateModal';
+import { useState } from 'react';
 
 import { LangProp } from './interfaces';
 
 const TopMenu = ( props:LangProp ) => {
-  // const refreshLang = ( ) => {
-  //   if ( !props.langObj ) {
-  //     props.langObj.setLangObj( require( './locale/ko_kr.json' ) );
-  //   }
-  //   else {
-  //     props.langObj.setLangObj( require( './locale/en_us.json' ) );
-  //   }
-  // };
-  // useEffect( refreshLang, [props.langObj.langObj] );
+  const [ showUpdate, setShowUpdate ] = useState<boolean> ( false );
+
+  const handleUpdate=()=>{ setShowUpdate(!showUpdate) };
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
@@ -31,7 +26,8 @@ const TopMenu = ( props:LangProp ) => {
               { props.langObj.langObj?.topMenu?.instructions }
             </Nav.Link>
             <Nav.Link>{ props.langObj.langObj?.topMenu?.login }</Nav.Link>
-            <Nav.Link>{ props.langObj.langObj?.topMenu?.updates }</Nav.Link>
+            <Nav.Link onClick={ handleUpdate }>{ props.langObj.langObj?.topMenu?.updates }</Nav.Link>
+            <UpdateModal show={ showUpdate } setShow={ setShowUpdate }/>
             <Nav.Link>{ props.langObj.langObj?.topMenu?.settings }</Nav.Link>
             <NavDropdown title="Dropdown" id="collasible-nav-dropdown" style={{display:'none'}}>
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

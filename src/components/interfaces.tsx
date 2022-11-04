@@ -7,12 +7,17 @@ interface LangObj {
   langObj: any
 }
 
+interface ShowModal {
+  show: boolean,
+  setShow: React.Dispatch<React.SetStateAction<boolean>>
+}
+
 interface ToggleSwitchProp {
   id?: string,
   label?: string,
   disabled?: boolean,
   switchStatus: boolean,
-  setSwitchStatus: React.Dispatch<React.SetStateAction<boolean>>,
+  setSwitchStatus: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 interface AdvancedSearchProp {
@@ -29,4 +34,4 @@ interface TextBoxProp {
   textBoxRef: React.RefObject<HTMLInputElement>,
 }
 
-export { type LangProp, type LangObj, type ToggleSwitchProp, type TextBoxProp, type AdvancedSearchProp };
+export { type ShowModal, type LangProp, type LangObj, type ToggleSwitchProp, type TextBoxProp, type AdvancedSearchProp };
