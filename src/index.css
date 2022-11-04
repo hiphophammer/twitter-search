@@ -2,6 +2,11 @@ body {
   background-color: gray;
 }
 
+.flagImage {
+  width: 32px;
+  height: 20px;
+}
+
 .mainCard {
   display:flex;
   height:100%;

@@ -2,7 +2,8 @@
   "topMenu": {
     "title": "Tweet Snitch",
     "login": "Sign in",
-    "settings": "Settings"
+    "settings": "Settings",
+    "updates": "Updates"
   },
   "confirm": "Confirm",
   "advancedSearch": "Advanced Search",

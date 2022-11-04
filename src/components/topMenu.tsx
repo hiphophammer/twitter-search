@@ -4,8 +4,6 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useEffect, useState } from 'react';
 
-import KRFlag from './flags/kor.svg';
-import USFlag from './flags/usa.svg';
 import { LangProp } from './interfaces';
 
 const TopMenu = ( props:LangProp ) => {
@@ -27,6 +25,7 @@ const TopMenu = ( props:LangProp ) => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link>{ props.langObj.langObj?.topMenu?.login }</Nav.Link>
+            <Nav.Link>{ props.langObj.langObj?.topMenu?.updates }</Nav.Link>
             <Nav.Link>{ props.langObj.langObj?.topMenu?.settings }</Nav.Link>
             <NavDropdown title="Dropdown" id="collasible-nav-dropdown" style={{display:'none'}}>
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
@@ -44,19 +43,17 @@ const TopMenu = ( props:LangProp ) => {
             <Nav.Link onClick={ ()=>{ props.langObj.setLangObj( require( './locale/ko_kr.json' ) ); } }>
               <img 
                 alt='Korean'
-                src={KRFlag}
-                height='20'
+                src='/flags/ko_kr.png'
                 title='한국어/Korean'
-                className="d-inline-block align-center"
+                className="flagImage"
               />{' '}
             </Nav.Link>
             <Nav.Link onClick={ ()=>{ props.langObj.setLangObj( require( './locale/en_us.json' ) ); } }>
               <img 
                 alt='English (United States)'
-                src={USFlag}
-                height='20'
+                src='/flags/en_us.png'
                 title='English (US)'
-                className="d-inline-block align-center"
+                className="flagImage"
               />{' '}
             </Nav.Link>
           </Nav>

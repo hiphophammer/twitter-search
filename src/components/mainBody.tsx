@@ -12,7 +12,7 @@ import { LangObj } from './interfaces';
 const MainBody = ( props:LangObj ) => {
   const buttonClick = ( ) => {
     if ( !basicSearchRef.current || basicSearchRef.current.value === '' ) {
-      alert (  props.langObj.langObj.alert_empty );
+      alert ( props.langObj.alert_empty );
       return;
     }
     alert ( basicSearchRef.current.value );
