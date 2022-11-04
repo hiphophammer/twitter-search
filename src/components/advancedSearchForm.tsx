@@ -274,7 +274,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
       <div style={{display:(section3?'block':'none')}}>
         <div style={{marginTop: '20px'}}></div>
         <div className='filterFlex'>
-          <h6 className='bold'>답글</h6>
+          <h6 className='bold'>{ props?.langObj?.section3_label1 }</h6>
           <ToggleSwitch
             id='filterSwitch'
             switchStatus={ commentSwitch }
@@ -289,7 +289,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
         }}>
           <div className='filterDivRow'>
             <h6>
-              답글 및 원본 트윗 포함
+              { props?.langObj?.section3_label2 }
             </h6>
             <Form.Check 
                 type='checkbox'
@@ -300,7 +300,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
           </div>
           <div className='filterDivRow'>
             <h6>
-              답글만 보기
+              { props?.langObj?.section3_label3 }
             </h6>
             <Form.Check 
                 type='checkbox'
@@ -313,7 +313,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
 
         <div style={{marginTop: '20px'}}></div>
         <div className='filterFlex'>
-          <h6 className='bold'>링크</h6>
+          <h6 className='bold'>{ props?.langObj?.section3_label4 }</h6>
           <ToggleSwitch
             id='filterSwitch'
             switchStatus={ linkSwitch }
@@ -328,7 +328,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
         }}>
           <div className='filterDivRow'>
             <h6>
-              링크가 추가된 트윗 포함
+              { props?.langObj?.section3_label5 }
             </h6>
             <Form.Check 
                 type='checkbox'
@@ -339,7 +339,7 @@ const AdvancedSearchForm = ( props:AdvancedSearchProp ) => {
           </div>
           <div className='filterDivRow'>
             <h6>
-              링크가 추가된 트윗만 보기
+              { props?.langObj?.section3_label6 }
             </h6>
             <Form.Check 
                 type='checkbox'
