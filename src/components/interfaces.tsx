@@ -1,3 +1,8 @@
+interface LangProp {
+  langObj: { lang:string ,
+          setLang:React.Dispatch<React.SetStateAction<string>> }
+}
+
 interface ToggleSwitchProp {
   id?: string,
   label?: string,
@@ -19,4 +24,4 @@ interface TextBoxProp {
   textBoxRef: React.RefObject<HTMLInputElement>,
 }
 
-export { type ToggleSwitchProp, type TextBoxProp, type AdvancedSearchProp };
+export { type LangProp, type ToggleSwitchProp, type TextBoxProp, type AdvancedSearchProp };

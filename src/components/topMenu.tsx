@@ -2,20 +2,33 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useEffect, useState } from 'react';
 
 import KRFlag from './flags/kor.svg';
 import USFlag from './flags/usa.svg';
+import { LangProp } from './interfaces';
 
-const TopMenu = ( ) => {
+const TopMenu = ( props:LangProp ) => {
+  const [ langObj, setLangObj ] = useState( require( './locale/ko_kr.json' ) );
+  const refreshLang = ( ) => {
+    if ( props.langObj.lang.toLowerCase() === 'ko_kr' ) {
+      setLangObj( require( './locale/ko_kr.json' ) );
+    }
+    else {
+      setLangObj( require( './locale/en_us.json' ) );
+    }
+  };
+  useEffect( refreshLang, [props.langObj.lang] );
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">트위터 검색기</Navbar.Brand>
+        <Navbar.Brand href="#home">{ langObj.topMenu.title }</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="">로그인</Nav.Link>
-            <Nav.Link href="">설정</Nav.Link>
+            <Nav.Link>{ langObj.topMenu.login }</Nav.Link>
+            <Nav.Link>{ langObj.topMenu.settings }</Nav.Link>
             <NavDropdown title="Dropdown" id="collasible-nav-dropdown" style={{display:'none'}}>
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
@@ -29,7 +42,7 @@ const TopMenu = ( ) => {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="#KR">
+            <Nav.Link onClick={ ()=>{ props.langObj.setLang('ko_kr'); } }>
               <img 
                 alt='Korean'
                 src={KRFlag}
@@ -38,7 +51,7 @@ const TopMenu = ( ) => {
                 className="d-inline-block align-center"
               />{' '}
             </Nav.Link>
-            <Nav.Link href="#EN_US">
+            <Nav.Link onClick={ ()=>{ props.langObj.setLang('en_us'); } }>
               <img 
                 alt='English (United States)'
                 src={USFlag}
