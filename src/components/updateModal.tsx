@@ -13,7 +13,13 @@ function UpdateModal( props:ShowModal ) {
         </Modal.Header>
         <Modal.Body>
           ㅈㅅ 아직 아무것도 되는 게 없음 ㅎ;; ㅠ <br />
-          Sry.. nothing works as of yet.
+          현재 할 일 목록: <br />
+          Sry.. nothing works as of yet. <br />
+          트위터 OAuth 구현 Twitter OAuth implementation <br />
+          데이터베이스 구현 DB imp. (probably supabase.. or firebase)<br />
+          쿼리 서치 구현 Query search imp. <br />
+          알림 구현 Alert imp. <br />
+          
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
