@@ -22,7 +22,7 @@ const MainBody = ( props:LangObj ) => {
 
   return (
     <Container style={{
-        marginTop: '40px',
+        marginTop: '100px',
         marginBottom: '100px',
         display: 'flex',
         justifyContent: 'center',

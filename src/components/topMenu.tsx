@@ -20,7 +20,7 @@ const TopMenu = ( props:LangProp ) => {
   // useEffect( refreshLang, [props.langObj.langObj] );
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
       <Container>
         <Navbar.Brand href="#home">{ props.langObj.langObj?.topMenu?.title }</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
