@@ -77,7 +77,7 @@ body {
   transform-origin: 0 0;
 
   opacity: .65;
-  transform: scale(.85) translateY(-5rem) translateX(17rem);
+  transform: scale(.85) translateY(-5rem) translateX(43vw);
 }
 .yearDropdownLabel {
   position: absolute;
@@ -93,7 +93,7 @@ body {
   transform-origin: 0 0;
 
   opacity: .65;
-  transform: scale(.85) translateY(-5rem) translateX(28rem);
+  transform: scale(.85) translateY(-5rem) translateX(70vw);
 }
 
 #root > div > div > div > div > form > div {
