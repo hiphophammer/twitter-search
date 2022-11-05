@@ -16,7 +16,7 @@ const BottomMenu = ( ) => {
                 top: '50%',
                 transform: 'translateY(-50%)' 
               }}>
-                ⓒ 2022 Hiphophammer
+                <small>ⓒ 2022 Hiphophammer</small>
               </p>
             </Nav.Item>
           </Nav>
