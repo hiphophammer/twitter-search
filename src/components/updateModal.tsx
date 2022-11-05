@@ -19,6 +19,8 @@ function UpdateModal( props:ShowModal ) {
           데이터베이스 구현 DB imp. (probably supabase.. or firebase)<br />
           쿼리 서치 구현 Query search imp. <br />
           알림 구현 Alert imp. <br />
+          <br/><br/>
+          다크 모드 Dark mode (not urgent but my eyes are hurting)
           
         </Modal.Body>
         <Modal.Footer>
