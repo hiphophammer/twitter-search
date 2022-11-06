@@ -24,27 +24,9 @@ jobs:
         run: npm run build
       - name: Build the Docker image
         run: docker build . -t registry.heroku.com/$APP_NAME/web
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Heroku registry
         run: docker login --username=_ --password=$HEROKU_API_KEY registry.heroku.com
       - name: Push to Heroku
         run: docker push registry.heroku.com/$APP_NAME/web
       - name: Release
         run: heroku container:release web -a $APP_NAME
-#       - name: Build react
-#         run: react-scripts build
-#       - name: Move to parent directory
-#         run: cd ..
-#       - uses: actions/checkout@v2
-#       - name: Login to Heroku registry
-#         run: docker login --username=_ --password=$HEROKU_API_KEY registry.heroku.com
-#       - name: Build the Docker image
-#         run: docker build . -t registry.heroku.com/$APP_NAME/web
-#       - name: Push to Heroku
-#         run: docker push registry.heroku.com/$APP_NAME/web
-#       - name: Release
-#         run: heroku container:release web -a $APP_NAME
