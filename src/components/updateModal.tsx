@@ -15,6 +15,7 @@ function UpdateModal( props:ShowModal ) {
           ㅈㅅ 아직 아무것도 되는 게 없음 ㅎ;; ㅠ <br />
           현재 할 일 목록: <br />
           Sry.. nothing works as of yet. <br />
+          백엔드도?? idk <br />
           트위터 OAuth 구현 Twitter OAuth implementation <br />
           데이터베이스 구현 DB imp. (probably supabase.. or firebase)<br />
           쿼리 서치 구현 Query search imp. <br />
