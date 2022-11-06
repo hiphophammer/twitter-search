@@ -395,6 +395,7 @@ const AdvancedSearchForm = (props: AdvancedSearchProp) => {
               className="date_button"
               title={props?.langObj?.section5_label3}
               id="dropdown_month"
+              children={undefined}
             ></DropdownButton>
             <label htmlFor="dropdown_month" className="monthDropdownLabel">
               {" "}
@@ -406,6 +407,7 @@ const AdvancedSearchForm = (props: AdvancedSearchProp) => {
               className="date_button"
               title={props?.langObj?.section5_label4}
               id="dropdown_date"
+              children={undefined}
             ></DropdownButton>
             <label htmlFor="dropdown_date" className="monthDropdownLabel">
               {" "}
@@ -417,6 +419,7 @@ const AdvancedSearchForm = (props: AdvancedSearchProp) => {
               className="date_button"
               title={props?.langObj?.section5_label5}
               id="dropdown_year"
+              children={undefined}
             ></DropdownButton>
             <label htmlFor="dropdown_year" className="monthDropdownLabel">
               {" "}
@@ -432,6 +435,7 @@ const AdvancedSearchForm = (props: AdvancedSearchProp) => {
               className="date_button"
               title={props?.langObj?.section5_label3}
               id="dropdown_month"
+              children={undefined}
             ></DropdownButton>
             <label htmlFor="dropdown_month" className="monthDropdownLabel">
               {" "}
@@ -443,6 +447,7 @@ const AdvancedSearchForm = (props: AdvancedSearchProp) => {
               className="date_button"
               title={props?.langObj?.section5_label4}
               id="dropdown_date"
+              children={undefined}
             ></DropdownButton>
             <label htmlFor="dropdown_date" className="monthDropdownLabel">
               {" "}
@@ -454,6 +459,7 @@ const AdvancedSearchForm = (props: AdvancedSearchProp) => {
               className="date_button"
               title={props?.langObj?.section5_label5}
               id="dropdown_year"
+              children={undefined}
             ></DropdownButton>
             <label htmlFor="dropdown_year" className="monthDropdownLabel">
               {" "}
