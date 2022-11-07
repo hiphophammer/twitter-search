@@ -5,4 +5,4 @@ RUN npm install
 COPY . .
 EXPOSE 8000
 
-ENTRYPOINT ["npm", "server"]
+ENTRYPOINT ["npm", "start"]

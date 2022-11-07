@@ -13,10 +13,11 @@ const __dirname = dirname(__filename);
 // app.use(cors());
 
 app.listen(8000, () => {
-  console.log(`${__dirname}`);
+  console.log(`listening to 8000...`);
 });
 app.use(express.static(path.join(__dirname, "..", "build")));
 
 app.get("/", (req, res) => {
+  console.log(`Got a request `);
   res.sendFile(path.join(__dirname, "..", "build", "index.html"));
 });
