@@ -12,8 +12,8 @@ const __dirname = dirname(__filename);
 // var cors = require("cors");
 // app.use(cors());
 
-app.listen(8000, () => {
-  console.log(`listening to 8000...`);
+app.listen(8000 || process.env.PORT, () => {
+  console.log(`The app is listening to port ${8000 || process.env.PORT}...`);
 });
 app.use(express.static(path.join(__dirname, "..", "build")));
 
