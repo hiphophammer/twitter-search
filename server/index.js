@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
 import cors from "cors";
-import GetTwitterOAuthToken from "./api/twitterApi";
+// import GetTwitterOAuthToken from "./api/twitterApi";
 const app = new express();
 
 import { fileURLToPath } from "url";
@@ -10,6 +10,8 @@ import { dirname } from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+app.use(express.json());
+app.use(cors());
 app.use(express.static(path.join(__dirname, "..", "build")));
 
 // app.use(express.json());
