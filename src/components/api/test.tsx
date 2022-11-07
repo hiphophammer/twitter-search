@@ -1,3 +1,8 @@
-import needle from "needle";
+import axios from "axios";
 
-export const Test = () => {};
+export const Test = async () => {
+  const endpointUrl = "http://localhost:8000";
+  const res = await axios.get("/hello");
+
+  alert(res.data);
+};

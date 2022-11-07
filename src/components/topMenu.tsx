@@ -21,8 +21,6 @@ const TopMenu = (props: LangProp) => {
     setShowSettings(!showSettings);
   };
 
-  const apiTest = () => Test;
-
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
       <Container>
@@ -52,7 +50,7 @@ const TopMenu = (props: LangProp) => {
               setShow={setShowSettings}
               langObj={props.langObj.langObj}
             />
-            <Nav.Link onClick={apiTest}>Test</Nav.Link>
+            <Nav.Link onClick={Test}>Test</Nav.Link>
             <NavDropdown
               title="Dropdown"
               id="collasible-nav-dropdown"
