@@ -8,12 +8,14 @@ import { dirname } from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+let PORT = !process.env.PORT ? 8000 : process.env.PORT;
+
 // app.use(express.json());
 // var cors = require("cors");
 // app.use(cors());
 
-app.listen(8000 || process.env.PORT, () => {
-  console.log(`The app is listening to port ${8000 || process.env.PORT}...`);
+app.listen(PORT, () => {
+  console.log(`The app is listening to port ${PORT}...`);
 });
 app.use(express.static(path.join(__dirname, "..", "build")));
 
