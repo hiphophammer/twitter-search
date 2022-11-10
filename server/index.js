@@ -14,21 +14,18 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, "..", "build")));
 
-// app.use(express.json());
-// app.use(cors());
-
-const printReqInfo = function (req, res, next) {
-  req.requestTime = new Date().toISOString();
-  console.log(`Request time: ${req.requestTime}`);
-  console.log(`URL: ${req.originalUrl}`);
-  console.log(`App: ${req.app}`);
-  console.log(`BaseUrl: ${req.baseUrl}`);
-  console.log(`Body: ${JSON.stringify(req.body)}`);
-  console.log(`Hostname: ${req.hostname}`);
-  console.log(`IP address: ${req.ip}`);
-  console.log(`Method: ${req.method}`);
-  next();
-};
+// const printReqInfo = function (req, res, next) {
+//   req.requestTime = new Date().toISOString();
+//   console.log(`Request time: ${req.requestTime}`);
+//   console.log(`URL: ${req.originalUrl}`);
+//   console.log(`App: ${req.app}`);
+//   console.log(`BaseUrl: ${req.baseUrl}`);
+//   console.log(`Body: ${JSON.stringify(req.body)}`);
+//   console.log(`Hostname: ${req.hostname}`);
+//   console.log(`IP address: ${req.ip}`);
+//   console.log(`Method: ${req.method}`);
+//   next();
+// };
 
 // app.use(printReqInfo);
 
@@ -44,6 +41,6 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "build", "index.html"));
 });
 
-app.get("/hello", (req, res) => {
+app.get("/oAuth/oAuth-Token", (req, res) => {
   res.send("hello~!!");
 });
