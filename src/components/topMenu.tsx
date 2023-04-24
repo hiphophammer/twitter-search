@@ -10,9 +10,14 @@ import { Test } from "./api/test";
 
 import { LangProp } from "./interfaces";
 
+import { setKorean, setEnglish } from "../features/language/languageSlice";
+import { useSelector, useDispatch } from "react-redux";
+
 const TopMenu = (props: LangProp) => {
   const [showUpdate, setShowUpdate] = useState<boolean>(false);
   const [showSettings, setShowSettings] = useState<boolean>(false);
+  const locale = useSelector((state) => state.language.langObj);
+  const dispatch = useDispatch();
 
   const handleUpdate = () => {
     setShowUpdate(!showUpdate);
@@ -70,7 +75,7 @@ const TopMenu = (props: LangProp) => {
           <Nav>
             <Nav.Link
               onClick={() => {
-                props.langObj.setLangObj(require("./locale/ko_kr.json"));
+                dispatch(setKorean());
               }}
             >
               <img
@@ -82,7 +87,7 @@ const TopMenu = (props: LangProp) => {
             </Nav.Link>
             <Nav.Link
               onClick={() => {
-                props.langObj.setLangObj(require("./locale/en_us.json"));
+                dispatch(setEnglish());
               }}
             >
               <img
