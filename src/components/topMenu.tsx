@@ -2,9 +2,9 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import UpdateModal from "./updateModal";
+import { lazy, useState, Suspense } from "react";
+
 import SettingsModal from "./settingsModal";
-import { useState } from "react";
 
 import { Test } from "./api/test";
 
@@ -12,6 +12,8 @@ import { LangProp } from "./interfaces";
 
 import { setKorean, setEnglish } from "../features/language/languageSlice";
 import { useSelector, useDispatch } from "react-redux";
+
+const UpdateModal = lazy(() => import("./updateModal.tsx"));
 
 const TopMenu = (props: LangProp) => {
   const [showUpdate, setShowUpdate] = useState<boolean>(false);
@@ -43,9 +45,11 @@ const TopMenu = (props: LangProp) => {
               {props.langObj.langObj?.topMenu?.instructions}
             </Nav.Link>
             <Nav.Link>{props.langObj.langObj?.topMenu?.login}</Nav.Link>
-            <Nav.Link onClick={handleUpdate}>
-              {props.langObj.langObj?.topMenu?.updates}
-            </Nav.Link>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Nav.Link onClick={handleUpdate}>
+                {props.langObj.langObj?.topMenu?.updates}
+              </Nav.Link>
+            </Suspense>
             <UpdateModal show={showUpdate} setShow={setShowUpdate} />
             <Nav.Link onClick={handleSettings}>
               {props.langObj.langObj?.topMenu?.settings}

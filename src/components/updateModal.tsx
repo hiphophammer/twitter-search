@@ -1,8 +1,8 @@
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import { ShowModal } from './interfaces';
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import { ShowModal } from "./interfaces";
 
-function UpdateModal( props:ShowModal ) {
+function UpdateModal(props: ShowModal) {
   const handleClose = () => props.setShow(false);
 
   return (
@@ -17,12 +17,13 @@ function UpdateModal( props:ShowModal ) {
           Sry.. nothing works as of yet. <br />
           백엔드도?? idk <br />
           트위터 OAuth 구현 Twitter OAuth implementation <br />
-          데이터베이스 구현 DB imp. (probably supabase.. or firebase)<br />
+          데이터베이스 구현 DB imp. (probably supabase.. or firebase)
+          <br />
           쿼리 서치 구현 Query search imp. <br />
           알림 구현 Alert imp. <br />
-          <br/><br/>
+          <br />
+          <br />
           다크 모드 Dark mode (not urgent but my eyes are hurting)
-          
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
